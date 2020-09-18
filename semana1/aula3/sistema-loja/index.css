@@ -1,10 +1,44 @@
 
 *{
     background-color: rgb(231, 215, 179);
+    font-family: Arial, sans-serif;
 }
-h1{color:peru;font-size:40px;font-family:Tahoma;text-align: center}
+
+#cabecalho{
+
+    border-bottom: 1px sienna solid
+    
+}
+h1{
+    color:peru;
+    font-size:40px;
+    font-family:Tahoma;
+    text-align: center}
 
 .nomedaloja{
-    color: peru;text-align: center; font-size: 40px;
+    color: peru;
+    text-align: center; 
+    font-size: 40px;
 }
 
+#subtitulo{
+    color:brown;
+    text-align: center; 
+    font-size: 20px;
+}
+  
+
+#conteudo{
+    padding-bottom: 30px;
+    text-align: justify;
+}
+.redes{
+    width: 50px;
+    
+}
+
+#rodape{
+    position: absolute;
+    bottom: 0
+    
+}
