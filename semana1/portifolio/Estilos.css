@@ -1,0 +1,47 @@
+*{
+    font-family: Arial, sans-serif;
+   
+
+}
+a{
+    text-decoration: none;
+    border: solid rgb(49, 49, 49);
+    color:  rgb(49, 49, 49);
+}
+#aqui{
+    border:solid green ;
+    color: green;
+}
+#nome{
+    text-align: center;
+    color: green;
+}
+#foto{
+    height: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.nborda{
+    border:none
+}
+.proj{
+    height: 200px;
+    border:solid rgb(49, 49, 49);
+}
+.icone{
+    height: 50px;
+    
+}
+.footer{
+    text-align: center;
+    background-color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+   
+}
+
+.formulário{
+    
