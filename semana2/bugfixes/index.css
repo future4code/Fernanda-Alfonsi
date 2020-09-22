@@ -52,6 +52,8 @@ div img {
     background-color: #c44f00;
 }
 
+
+
 .container {
     height: 500px;
     text-align: center;
@@ -108,17 +110,23 @@ div:last-child {
 
 table {
     width: 60%;
+    color: ;
     
 }
 
-td button {
+td button{
     background-color: #fadf63;
     width: 150px;
     height: 30px;
     border-radius: 5px;
     color: black;
 }
-
+.botao-comprar:hover{
+    background-color: orange;
+}
+ .botao-comprar:active{
+     background-color: peru;
+ }
 .container-do-search {
     margin-top: 20px;
     height: 100px;
