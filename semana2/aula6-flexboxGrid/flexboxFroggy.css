@@ -1,0 +1,61 @@
+/**nível 1 **/
+justify-content: flex-end
+/**nível 2 **/
+justify-content:center
+/**nível 3 **/
+justify-content:space-around
+/**nível 4 **/
+justify-content:space-between
+/**nível 5 **/
+align-items:flex-end
+/**nível 6 **/
+justify-content:center; 
+align-items: center
+/**nível 7 **/
+align-items:flex-end;
+justify-content:space-around
+/**nível 8 **/
+flex-direction:row-reverse
+/**nível 9 **/
+flex-direction:column
+/**nível 10 **/
+flex-direction:row-reverse;
+justify-content:flex-end
+/**nível 11 **/
+flex-direction:column;
+justify-content:flex-end
+/**nível 12 **/
+flex-direction:column-reverse;
+justify-content:space-between
+/**nível 13 **/
+justify-content:center;
+flex-direction:row-reverse;
+aling-items:flex-end;
+/**nível 14 **/
+order:2
+/**nível 15 **/
+order:-3
+/**nível 16 **/
+align-self:flex-end
+/**nível 17 **/
+align-self:flex-end;
+order:3
+/**nível 18 **/
+flex-wrap:wrap
+/**nível 19 **/
+flex-direction:column;
+flex-wrap:wrap
+/**nível 20 **/
+flex-flow:column wrap
+/**nível 21 **/
+align-content:flex-start
+/**nível 22 **/
+align-content:flex-end
+/**nível 23 **/
+flex-direction:column-reverse;
+align-content:center
+/**nível 24 **/
+flex-direction:column-reverse;
+flex-wrap:wrap-reverse;
+justify-content:center;
+align-content: space-between
