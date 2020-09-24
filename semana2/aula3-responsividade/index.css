@@ -8,42 +8,39 @@ body {
 div {
   
     display:grid;
-   
-}
-
-#main-container{
-   
+    gap:0.5em;
     
 }
+
+
+   
+    
+
 #first-block {
     background-color: red;
     height: 10vh;
- 
+    
 }
 
 #bloco1{
     grid-template-columns: repeat(3, 1fr);
-    margin: 0.5em;
-    gap:0.5em;
+    
     height: 15vh;
 }
 #bloco2{
     grid-template-columns: 1fr 1fr 1fr;
-    margin: 0.5em;
-    gap:0.5em;
+   
     height: 15vh;
 }
 #blocopreto{
     grid-template-columns: repeat(2, 1fr);
-    margin: 0.5em;
-    gap:0.5em;
+  
     height: 45vh;
 
 }
 #blocobranco{
     grid-template-columns: repeat(3, 1fr);
-    margin: 0.5em;
-    gap:0.5em;
+   
     height: 15vh;
 }
 
@@ -84,11 +81,40 @@ div {
     justify-items: center;
 }
 
-@media screen and (min-device-width:421) and (max-device-width:800){
-    #blocounico{
-        grid-template: repeat(2, 1fr);/repeat(2, 1fr)
-        grid column 1/3
-        margin: 0.5em;
+@media screen and (min-device-width:421px) and (max-device-width:800px){
+    #bloco1, #bloco2, #blocobranco{
+      grid-template: 1fr 1fr / 1fr 1fr ;
+      
+    }
+   
+    .green-block, #br11{
+        grid-column: 1 / 3;
+        margin: 0,5em;
+               
+     }
+        
+     
+    
+
+    
 }
 
 
+@media screen and (min-device-width:320px) and (max-device-width:420px){
+    
+    #bloco1, #bloco2, #blocobranco, #blocopreto{
+        grid-template: 1fr  / 1fr;
+        
+         }
+   
+    .black-block,.blue-block,.green-block, .white-block, .yellow-block, #first-block{
+        height:3em;
+    }
+    
+    #blocopreto{
+        height:6.5em;
+    }
+    #bloco1, #bloco2, #blocobranco{
+        height:10.5em;
+    }
+}
