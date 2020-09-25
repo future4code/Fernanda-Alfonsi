@@ -1,0 +1,47 @@
+
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header{
+
+    background-color:rgb(31, 31, 36);
+    padding: 2em;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+      
+}
+
+#logo{
+    height: 20rem;
+}
+.menuheader{
+    text-decoration: none;
+    color: rgb(31, 31, 36);
+    font-size:1.rem;
+    background-color: rgb(210, 194, 176);
+    padding:0.5em;
+}
+#aqui{
+    background-color: white;
+}
+  
+
+.imgsection{
+    width:100vw;
+}
+
+
+.icone{
+    height: 5em;
+}
+footer{
+    text-align: center;
+    background-color:white;
+    color: rgb(31, 31, 36);
+    bottom: 0;
+    width: 100%;
+    height: 20em;
+    
+}
