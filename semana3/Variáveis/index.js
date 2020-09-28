@@ -33,7 +33,7 @@ console.log(`Olá ${nome} você tem ${idade} anos`)
 
 // EXERCÍCIO 2
 
-let carnaval=prompt("Qual seu bloquinho de carnaval preferido em São Paulo?")
+/*let carnaval=prompt("Qual seu bloquinho de carnaval preferido em São Paulo?")
 console.log( "Meu bloquinho preferido no Carnaval é", carnaval)
 let pascoa=prompt("Ná pascoa, você prefere viajar ou passar com a familia?")
 console.log("Na páscoa eu prefiro", pascoa)
@@ -80,5 +80,22 @@ index.js:66 Essas são minhas comidas preferidas:
  pipoca 
  Parmesão 
  Sopa 
- Guaca Mole 
+ Guaca Mole */
 
+ let covid19Quest=["Você usa a máscara para sair?", "Utiliza álcool gel para higienizar as mãos?", "Evita aglomeração?"]
+let sair = prompt(covid19Quest[0])
+let álcool = prompt(covid19Quest[1])
+let gente = prompt(covid19Quest[2])
+let covid19Resp = [sair, álcool, gente]
+console.log (`\n ${covid19Quest[0]}, ${covid19Resp[0]} \n ${covid19Quest[1]}, ${covid19Resp[1]} \n ${covid19Quest[2]}, ${covid19Resp[2]}\n`)
+let verdadeiro=true
+let falso=false
+console.log (typeof verdadeiro, typeof falso)  
+
+/*
+index.js:90 
+ Você usa a máscara para sair?, verdadeiro 
+ Utiliza álcool gel para higienizar as mãos?, verdadeiro 
+ Evita aglomeração?, falso
+
+index.js:93 boolean boolean/*
