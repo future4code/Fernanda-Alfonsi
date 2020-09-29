@@ -15,10 +15,10 @@ console.log(typeof idade)
 // index.js:12 undefined
 // A resposta para ambos os types foi undefined, pois não atribuimos nenhum valor.  
 
-/*let nomeDoUsuario=prompt("Qual seu nome?")
+let nomeDoUsuario=prompt("Qual seu nome?")
 let idadeDoUsuario=prompt("Qual sua Idade?")
 nome = nomeDoUsuario
-idade = idadeDoUsuario*/
+idade = idadeDoUsuario
 
 console.log (typeof nome)  
 console.log (typeof idade) 
@@ -33,7 +33,7 @@ console.log(`Olá ${nome} você tem ${idade} anos`)
 
 // EXERCÍCIO 2
 
-/*let carnaval=prompt("Qual seu bloquinho de carnaval preferido em São Paulo?")
+let carnaval=prompt("Qual seu bloquinho de carnaval preferido em São Paulo?")
 console.log( "Meu bloquinho preferido no Carnaval é", carnaval)
 let pascoa=prompt("Ná pascoa, você prefere viajar ou passar com a familia?")
 console.log("Na páscoa eu prefiro", pascoa)
@@ -46,11 +46,11 @@ console.log("No meu aniversário eu prefiro fazer a festa", aniversario)
 
 
 
-index.js:37 Meu bloquinho preferido no Carnaval é Cordão da Santa
-index.js:39 Na páscoa eu prefiro viajar
-index.js:41 minha comida preferida no natal é damasco
-index.js:43 Meu destino preferido de viagem no Ano Novo é Ubatuba
-index.js:45 No meu aniversário eu prefiro fazer a festa buteco
+// index.js:37 Meu bloquinho preferido no Carnaval é Cordão da Santa
+// index.js:39 Na páscoa eu prefiro viajar
+// index.js:41 minha comida preferida no natal é damasco
+// index.js:43 Meu destino preferido de viagem no Ano Novo é Ubatuba
+// index.js:45 No meu aniversário eu prefiro fazer a festa buteco
 
 // EXERCÍCIO 3
 
@@ -62,40 +62,33 @@ index.js:58 (5) ["Temaki", "Pizza", "Parmesão", "Sopa", "Guaca Mole"]
 
 
 console.log( `Essas são minhas comidas preferidas: \n ${listaRangos[0]} \n ${listaRangos[1]} \n ${listaRangos[2]} \n ${listaRangos[3]} \n ${listaRangos[4]} \n`)
-index.js:60 Essas são minhas comidas preferidas: 
- Temaki 
- Pizza 
- Parmesão 
- Sopa 
- Guaca Mole 
+// index.js:60 Essas são minhas comidas preferidas: 
+//  Temaki 
+//  Pizza 
+//  Parmesão 
+//  Sopa 
+//  Guaca Mole 
 
 
 
 let rangoUsuario=prompt( "Qual sua comida preferida")
-
 listaRangos[1] = rangoUsuario
 console.log( `Essas são minhas comidas preferidas: \n ${listaRangos[0]} \n ${listaRangos[1]} \n ${listaRangos[2]} \n ${listaRangos[3]} \n ${listaRangos[4]} \n`)
-index.js:66 Essas são minhas comidas preferidas: 
- Temaki 
- pipoca 
- Parmesão 
- Sopa 
- Guaca Mole */
+// index.js:66 Essas são minhas comidas preferidas: 
+//  Temaki 
+//  pipoca 
+//  Parmesão 
+//  Sopa 
+//  Guaca Mole 
 
- let covid19Quest=["Você usa a máscara para sair?", "Utiliza álcool gel para higienizar as mãos?", "Evita aglomeração?"]
-let sair = prompt(covid19Quest[0])
-let álcool = prompt(covid19Quest[1])
-let gente = prompt(covid19Quest[2])
-let covid19Resp = [sair, álcool, gente]
+let covid19Quest=["Você usa a máscara para sair?", "Utiliza álcool gel para higienizar as mãos?", "Evita aglomeração?"]
+let covid19Resp = [true, true, false]
 console.log (`\n ${covid19Quest[0]}, ${covid19Resp[0]} \n ${covid19Quest[1]}, ${covid19Resp[1]} \n ${covid19Quest[2]}, ${covid19Resp[2]}\n`)
-let verdadeiro=true
-let falso=false
-console.log (typeof verdadeiro, typeof falso)  
 
-/*
-index.js:90 
- Você usa a máscara para sair?, verdadeiro 
- Utiliza álcool gel para higienizar as mãos?, verdadeiro 
- Evita aglomeração?, falso
 
-index.js:93 boolean boolean/*
+
+// index.js:87 
+//  Você usa a máscara para sair?, true 
+//  Utiliza álcool gel para higienizar as mãos?, true 
+//  Evita aglomeração?, false
+
