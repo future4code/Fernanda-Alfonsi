@@ -27,16 +27,16 @@
 // }
 
 // EXERCÍCIO 3.c
-let arrayOriginal = [-1, 2, -5, 3, 4, 5, 6, 7, 8, 9, 22, 11, 12, -1, 13, 14, 15, 20]
+// let arrayOriginal = [-1, 2, -5, 3, 4, 5, 6, 7, 8, 9, 22, 11, 12, -1, 13, 14, 15, 20]
 
-let novoarray = []
-for(let valores of arrayOriginal){
-    if(valores%2===0){
-        novoarray.push = [valores]
+// let novoarray = []
+// for(let valores of arrayOriginal){
+//     if(valores%2===0){
+//         novoarray.push(valores)
        
-}
-    console.log(novoarray)
-}
+//     }
+// }
+// console.log(novoarray)
 
 // EXERCÍCIO 3.d
 // for(let index = 0; index < arrayOriginal.length;index+=1){
