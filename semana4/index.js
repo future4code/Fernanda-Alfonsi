@@ -5,8 +5,9 @@ function criarTarefa(){
 
    
     if(inputTarefas.value !== ""){
-        listaTarefas.innerHTML += `<li>${inputTarefas}</li>`
-        inputTarefas.value = " "
+        listaTarefas.innerHTML += `<li onclick = "riscaTarefa(this)"> ${inputTarefas}</li>`
+
+        document.getElementById("tarefas").value = ""
         
     }else{
         alert("Insira uma tarefa válida")
@@ -17,5 +18,9 @@ function criarTarefa(){
 }
 
 
-
+function riscaTarefa(li){
+      
+    li.style.color = "red";
+    li.style.textDecoration = "line-through";
+}
 
