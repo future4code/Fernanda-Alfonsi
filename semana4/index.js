@@ -4,16 +4,15 @@ function criarTarefa(){
     const listaTarefas = document.getElementById(escolherDia)
 
    
-    if(inputTarefas.value !== ""){
-        listaTarefas.innerHTML += `<li onclick = "riscaTarefa(this)"> ${inputTarefas}</li>`
-
-        document.getElementById("tarefas").value = ""
+    if(inputTarefas !== ""){
+        listaTarefas.innerHTML += `<li onclick = "riscaTarefa(this)">${inputTarefas}</li>`
+        document.getElementById("tarefa").value = " "
         
     }else{
-        alert("Insira uma tarefa válida")
+
+        alert(" Ei você! Insira uma tarefa válida")
         
     }
-
     
 }
 
