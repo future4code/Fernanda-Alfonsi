@@ -6,14 +6,16 @@ imprimirExtrato()
 // PRIMEIRO
 function imprimirDespesas(despesas){
     let divDespesas = document.getElementById('despesas')
+     
     divDespesas.innerHTML = '<p><u>Despesas Detalhadas</u></p>'
 
     arrDespesas.forEach((despesa, index, arrDespesas) =>{ 
-        divDespesas.innerHTML +=  `<p>${valorCadastro.value}</p>`,
-        divDespesas.innerHTML +=  `<p>${tipoCadastro.value}</p>`,
-        divDespesas.innerHTML +=  `<p>${descricaoCadastro.value}</p>`
-    }) // AQUI VEM A IMPLEMENTAÇÃO
+        divDespesas.innerHTML +=  `<p> valor: R$ ${despesa.valor} | tipo:${despesa.tipo} | descrição: ${despesa.descricao} </p>`
+    }) 
+    // console.log(arrDespesas)
 }
+
+
 
 
 // SEGUNDO 
@@ -24,11 +26,22 @@ function imprimirExtrato(){
     let gastoUtilidades = 0
     let gastoViagem = 0
 
+    arrDespesas.forEach((despesa, index, arrDespesas) =>{
+        
+        if(despesa.tipo === "alimentação"){
+            gastoAlimentacao += despesa.valor
+        }else if(despesa.tipo === "utilidades"){
+            gastoUtilidades += despesa.valor
+        }else{
+            gastoViagem += despesa.valor
+        }
+        
+        gastoTotal = gastoAlimentacao+gastoUtilidades+gastoViagem 
+    })
+        
+    
 
-    // AQUI VEM A IMPLEMENTAÇÃO
-
-    divExtrato.innerHTML = `<p>Extrato: Gasto Total: R$${gastoTotal} | Alimentação: R$${gastoAlimentacao} | 
-                                        Utilidades: R$${gastoUtilidades} | Viagem: R$${gastoViagem}</p>`
+    divExtrato.innerHTML = `<p>Extrato: Gasto Total: R$ ${gastoTotal} | Alimentação: R$ ${gastoAlimentacao} | Utilidades: R$ ${gastoUtilidades} | Viagem: R$ ${gastoViagem}</p>`
 }
 
 
@@ -76,9 +89,19 @@ function filtrarDespesas(){
     let valorMax = Number(document.getElementById('valorFiltroMax').value)
 
 
-    let despesasFiltradas // AQUI NESSA VARIÁVEL VEM A IMPLEMENTAÇÃO
+    let despesasFiltradas = arrDespesas.filter((despesa, index, arrDespesas)=>{
+        if((despesa.tipo===tipoFiltro || tipoFiltro==="todos") && (despesa.valor >=valorMin) && (despesa.valor <=valorMax)){                                    
+            return true            
+        }
+        return false
+        
+    })
+
+         // AQUI NESSA VARIÁVEL VEM A IMPLEMENTAÇÃO
 
     imprimirDespesas(despesasFiltradas)
+    // console.log(despesasFiltradas)
+    
 }
 
 
