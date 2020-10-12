@@ -300,3 +300,15 @@ const soMenor= pessoas.filter((gente) =>{
 console.log(soMenor)
 **/
 
+/** Exercício 2A
+
+const array = [1, 2, 3, 4, 5, 6]
+
+let dobrarNumero=(lista)=>{
+let vezesDois=array.map((numero,i, lista)=>{
+            return numero*2
+    })
+    console.log(vezesDois)
+}
+dobrarNumero(array)
+**/
