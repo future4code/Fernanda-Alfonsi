@@ -382,3 +382,47 @@ const naoPodeEntrar=(array)=>{
 naoPodeEntrar(pessoas)
 
 **/
+
+/** Exercício 4
+
+const consultas = [
+	{ nome: "João", genero: "masculino", cancelada: true, dataDaConsulta: "01/10/2019" },
+	{ nome: "Pedro", genero: "masculino", cancelada: false, dataDaConsulta: "02/10/2019" },
+	{ nome: "Paula", genero: "feminino", cancelada: true, dataDaConsulta: "03/11/2019" },
+	{ nome: "Márcia", genero: "feminino", cancelada: false, dataDaConsulta: "04/11/2019" }
+]
+
+const mandaEmail=(array) =>{
+   
+   let listaDeEmails=consultas.map((paciente,i,lista)=>{
+    
+    let senhorA=()=>{
+        if(paciente.genero==="masculino"){
+            return "Sr."
+        }else{
+            return "Sra."
+        }
+    }
+
+    let lembraloA=()=>{
+        if(paciente.genero==="masculino"){
+            return "lembrá-lo"
+        }else{
+            return "lembrá-la"
+        }
+    }
+        if (paciente.cancelada===false){
+
+            return (`Olá,${senhorA()} ${ paciente.nome}. Estamos enviando esta mensagem para ${lembraloA()} da sua consulta no dia ${ paciente.dataDaConsulta }. Por favor, acuse
+            o recebimento deste e-mail.`)
+
+        }else{
+            return (`Olá, ${senhorA()} ${ paciente.nome}. Infelizmente, sua consulta marcada
+            para o dia ${ paciente.dataDaConsulta } foi cancelada. Se quiser, pode entrar em 
+            contato conosco para remarcá-la`)
+        }
+   })
+    console.log(listaDeEmails)  
+   }
+   mandaEmail(consultas)
+   **/
