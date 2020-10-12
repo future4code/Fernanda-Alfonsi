@@ -202,3 +202,9 @@ function segundoMaiorEMenor(array){
 
 segundoMaiorEMenor(arrayDeNumeros)
 **/
+
+/** Exercício 2 
+let funcaoNaoNomeada=()=>{
+    alert("Hello Future4")
+}
+funcaoNaoNomeada()**/
