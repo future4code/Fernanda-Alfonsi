@@ -208,3 +208,16 @@ let funcaoNaoNomeada=()=>{
     alert("Hello Future4")
 }
 funcaoNaoNomeada()**/
+
+
+// Exercícios de Objetos
+
+/** Exercício 1 
+Arrays e Objetos são listas que servem para guardar dados. Criando assim, uma forma mais eficaz de utilizar o código sem precisar criar uma função para cada valor. 
+
+Usa-se uma array quando a seleção de dados que vamos usar é simples e sem a necessidade de criar categorias, como por exemplo, uma lista de números que você quer separar como par ou ímpar, ou de nomes que você quer verificar se um deles está cadastrado ou não, ou até mesmo com strings, números e bolleanos juntos, caso você queira depois separa por type.
+
+Objetos são listas também, mas organizadas com "compartimentos" que guardam informações sobre uma mesma referência. por exemplo se tenho uma lista de modelos para fazer uma propaganda e quero escolher uma pessoa com características físicas específicas como altura , cor da pele, e tipo de cabelo, organizo essas informações em objetos e quando for procurar pessoas com estas características, tenho uma função de filtro para saber, por exemplo, que pessoas desta lista tem o tipo de cabelo que eu preciso para a propaganda de shampoo para cabelos crespos.
+
+Posemos ter também listas formadas por objetos e lista que fazem parte de uma das chaves do objeto. 
+**/
