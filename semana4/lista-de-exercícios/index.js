@@ -102,3 +102,18 @@ No console será impresso o valor da Variável "meuDineiro" que devolverá 100 m
      numero += 1
     }    
   **/
+
+   /** Exercício 4 
+
+function queTrianguloEEsse(lado1, lado2, lado3){
+
+    if((lado1 === lado2)&& (lado1 === lado3) && (lado2===lado3)){
+        console.log("Este triângulo é Equilátero")
+    }else if((lado1 !== lado2)&& (lado1 !== lado3) && (lado2!==lado3)){
+        console.log("Este triangulo é Escaleno")
+    }else{
+        console.log("este triângulo é isóceles")
+    }
+}
+
+queTrianguloEEsse()**/
