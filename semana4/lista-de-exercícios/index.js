@@ -21,4 +21,11 @@ No console será impresso o valor da Variável "meuDineiro" que devolverá 100 m
   
   No console será impresso promeiro o valor quardado dentro de "novomontante que é 165 e uma mensagem de alerta será emitida no prompt já que "Tesouro direto" não é um case dentro da switch**/
 
-  
+  /** Ex.3 - pares e impares.
+   O código exibe uma Array "numeros" com díversos números e duas arrays vazias: "array1" e "array2" . 
+   Depois estabelece um loop "for of" que passatá por cada elemento dessa array e verivicará  cada elemento desta levando seu valor para a variavel número. Dentro do Laço "for of" têm um If que verifica se o  resto da divisão de "número" é 0, sabendo assim se ele é par. se for, ele é enpurrado para a "array1" e se não for (else) sera empurrado para a "array2" pelo elemento "".push()"
+   
+   No console será impresso a frase : Quantidade total de números 14 ( que é dada pela leitura do comprimento da array"numeros" pelo elemento ".length")
+
+   Será impresso também o comprimento da array1(de pares) e da "array2" (de impares)
+   **/
