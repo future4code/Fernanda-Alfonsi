@@ -367,3 +367,18 @@ const podeEntrar=(array)=>{
     }
 podeEntrar(pessoas)
 **/
+
+/** Exercício 3B
+
+const naoPodeEntrar=(array)=>{
+    const selecao2 = pessoas.filter((pessoa)=>{
+        if((pessoa.altura<1.5) || (pessoa.idade<14) || (pessoa.idade>60)){
+            return true
+        }
+       
+    })
+    console.log(selecao2)
+    }
+naoPodeEntrar(pessoas)
+
+**/
