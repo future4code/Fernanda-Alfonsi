@@ -325,3 +325,20 @@ let vezestres=array.map((numero,i, lista)=>{
 }
 triplicarNumero(array)
 **/
+
+
+/** Exercício 2C
+
+const array = [1, 2, 3, 4, 5, 6]
+const stringNumero=(lista) =>{
+    let arrayDeStrings=array.map((numero,i,lista)=>{
+        if (numero%2===0){
+            return (`${numero} é par`)
+        }else{
+         return(`${numero} é impar`)
+            }    
+    })
+    console.log(arrayDeStrings)
+   }
+stringNumero(array)
+**/
