@@ -240,3 +240,14 @@ function criaRetangulo(lado1, lado2){
 
 criaRetangulo(3,4)
 **/
+
+/** Exercício 3
+  const filme={
+        título: "Que Horas Ela Volta?",
+        ano: 2015,
+        diretor:"Anna Muylaert",
+        elenco:"Regina Casé, Camila Márdila, Karine Teles, Michel Joelsas e Lourenço Mutarelli"
+    }
+console.log(`Venha assistir ao filme ${filme.título}, de ${filme.ano}, dirigido por ${filme.diretor} e estrelado por ${filme.elenco}`)
+
+**/
