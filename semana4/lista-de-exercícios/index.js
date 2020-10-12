@@ -29,3 +29,16 @@ No console será impresso o valor da Variável "meuDineiro" que devolverá 100 m
 
    Será impresso também o comprimento da array1(de pares) e da "array2" (de impares)
    **/
+
+   /** Ex.4 Maior e menor número
+    
+    O código é composto por uma array de números  positivos e negativos.
+    Abaixo foi criada duas variaveis, "numero1" e "numero2" que receberão um valor depois que a array for verificada pelo elemento de laço "for of".
+
+    Dentro do laço temos dois elementos "if":
+    
+    O primeiro irá verificar se cada valor da array é menor que o valor "infinit" (que, segundo a explicação do Caio, é o maior numero que tem já que é infinito) atribuido à variável "numero1". Se for, a variável "numero1" receberá o novo valor de "número" até a lista toda ser verificada 
+
+    O segundo "if" irá verificar se cada valor da array é maior que o valor "0" atribuido à variável "numero2". Se for, a variável "numero2" receberá o novo valor de "numero" até a lista toda ser verificada.
+
+    no console será impresso o valor da variável numero1 que é "-10" e o valor da variável numero2 que é "1590"  **/
