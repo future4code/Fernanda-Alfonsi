@@ -269,3 +269,34 @@ let anonimizarPessoa = ()=>{
 }
 anonimizarPessoa()
 **/
+
+// Exercícios de Funções de array
+
+/** Exercício 1
+
+let pessoas=[
+	{ nome: "Pedro", idade: 20 },
+	{ nome: "João", idade: 10 },
+	{ nome: "Paula", idade: 12 },
+	{ nome: "Artur", idade: 89 } 
+]
+ 
+const soAdultos= pessoas.filter((gente) =>{
+    if(gente.idade >=20){
+        return true
+    }
+    
+})
+
+console.log(soAdultos)
+
+const soMenor= pessoas.filter((gente) =>{
+    if(gente.idade <20){
+        return true
+    }
+    
+})
+
+console.log(soMenor)
+**/
+
