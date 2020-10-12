@@ -221,3 +221,22 @@ Objetos são listas também, mas organizadas com "compartimentos" que guardam in
 
 Posemos ter também listas formadas por objetos e lista que fazem parte de uma das chaves do objeto. 
 **/
+
+/** Exercício 2 
+
+let objeto={largura: "x", altura:"y", perímetro: "z", área:"w"}
+
+function criaRetangulo(lado1, lado2){
+    let retangulo={
+        ...objeto,
+      largura:lado1,
+      altura: lado2,
+      perímetro:(2*lado1+lado2),
+      área:(lado1*lado2)
+    }
+    console.log(retangulo)
+}
+
+
+criaRetangulo(3,4)
+**/
