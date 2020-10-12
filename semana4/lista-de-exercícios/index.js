@@ -80,3 +80,25 @@ No console será impresso o valor da Variável "meuDineiro" que devolverá 100 m
     e-)true 
     
     **/
+
+   /** Exercício 3 
+   Este código ainda não funciona por alguns motivos:
+   1-Não foi pedido ao usuário a insersão no prompt da variável "quantidadeDeNumerosPares" 
+   2- A variável "i"  não recebe a implementação gerando assim um loop infinito. 
+   3-O console está imprimindo a multiplicação de i por dois e não o número par.
+   4- Par isso é preciso além de implementar uma verificação dos números através de if  e só adicionar +1 à "i" se o número for par.
+   5-) A variável número será implementada fora do "if" para receber +1 a cada vez que o loop voltar.
+
+   Correção de Implementação:
+
+   const quantidadeDeNumerosPares = Number(prompt("Digite a quantidade de números pares a serem impressos"))
+    let contaPar = 0
+    let numero = 0
+    while(contaPar < quantidadeDeNumerosPares ) {
+        if(numero % 2 === 0){
+            console.log(numero)
+            contaPar+=1
+        }
+     numero += 1
+    }    
+  **/
