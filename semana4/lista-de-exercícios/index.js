@@ -117,3 +117,43 @@ function queTrianguloEEsse(lado1, lado2, lado3){
 }
 
 queTrianguloEEsse()**/
+
+/** Exercício 5 
+  
+const comparaNumero = (numero1, numero2)=>{
+
+    // Identifica qual é o maior)
+    if(numero1>numero2){
+    console.log(`O maior é ${numero1}`)
+    }else if(numero1===numero2) {
+        console.log(`${numero1} e ${numero2} são iguais`)
+
+    }else{
+        console.log(`O maior é ${numero2}`)
+    }
+
+    // Identifica se são divisíveis
+    if(numero1 % numero2 ===0){
+        console.log(`${numero1} é divisível por ${numero2}`)
+    }else{
+        console.log(`${numero1} não é divisível por ${numero2}`)
+    }
+
+    if(numero2 % numero1 ===0){
+        console.log(`${numero2} é divisível por ${numero1}`)
+    }else{
+        console.log(`${numero2} não é divisível por ${numero1}`)
+    }
+
+    // diferençaentre os números
+
+    if((numero1-numero2) >= 0){
+        let diferenca1 = (numero1-numero2)
+        console.log("A diferença entre eles é" + diferenca1 )
+    }else if ((numero2-numero1) >= 0){
+        let diferenca2 = (numero2-numero1)
+        console.log(`A diferença entre eles é ${diferenca2}`)
+    }
+}
+
+comparaNumero()**/
