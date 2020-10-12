@@ -72,3 +72,11 @@ No console será impresso o valor da Variável "meuDineiro" que devolverá 100 m
         comandos aqui
     }
    **/
+  /** Exercício 2
+    a-) false
+    b-) true
+    c-)true
+    d-)true
+    e-)true 
+    
+    **/
