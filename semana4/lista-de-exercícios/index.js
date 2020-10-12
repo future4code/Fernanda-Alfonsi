@@ -42,3 +42,33 @@ No console será impresso o valor da Variável "meuDineiro" que devolverá 100 m
     O segundo "if" irá verificar se cada valor da array é maior que o valor "0" atribuido à variável "numero2". Se for, a variável "numero2" receberá o novo valor de "numero" até a lista toda ser verificada.
 
     no console será impresso o valor da variável numero1 que é "-10" e o valor da variável numero2 que é "1590"  **/
+
+    //   Exercícios de Lógica de Programação
+
+      /** Exercício 1
+
+    Existem algumas maneiras de percorrer uma lista. Podemos usar Laços, "for of", "while", ou "for", podemos usar "switch case" ou as funções de array como "forEach()", "map()" e "filter()".
+    
+    Exemplo de laços:
+    
+    const array = [1, 2, 3, 4, 5, 6, 7, 8, 9,  10, 11, 12, 13, 14, 15]
+    let arrayPar = []
+    for(let valores of array){
+        if(valores%2 === 0){
+            arrayPar.push(valores)
+        }
+     
+    }
+   
+    console.log(arrayPar)
+    let i=array[0]
+    while(i<array.length){
+        comandos aqui
+
+        i++
+    }
+
+    for(let i=0; i< array.length;i+=1){
+        comandos aqui
+    }
+   **/
