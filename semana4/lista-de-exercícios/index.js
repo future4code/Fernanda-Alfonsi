@@ -251,3 +251,21 @@ criaRetangulo(3,4)
 console.log(`Venha assistir ao filme ${filme.título}, de ${filme.ano}, dirigido por ${filme.diretor} e estrelado por ${filme.elenco}`)
 
 **/
+
+/** Exercício 4
+const pacatoCidadao={
+    nome: "João",
+    idade: 30,
+    email: "pacatocidadao@joão.com.br",
+    endereço:"Ladeira da Preguiça, 1000, Bairo do Sono, Carneirinhos-SP",
+}
+
+let anonimizarPessoa = ()=>{
+    let listaAnonimos={
+        ...pacatoCidadao,
+        nome: "Anônimo"
+    }
+    console.log(listaAnonimos)
+}
+anonimizarPessoa()
+**/
