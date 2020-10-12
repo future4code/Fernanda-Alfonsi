@@ -312,3 +312,16 @@ let vezesDois=array.map((numero,i, lista)=>{
 }
 dobrarNumero(array)
 **/
+/** Exercício 2B
+
+const array = [1, 2, 3, 4, 5, 6]
+
+
+let triplicarNumero=(lista)=>{
+let vezestres=array.map((numero,i, lista)=>{
+            return String(numero*3)
+    })
+    console.log(vezestres)
+}
+triplicarNumero(array)
+**/
