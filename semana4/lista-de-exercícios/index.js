@@ -157,3 +157,48 @@ const comparaNumero = (numero1, numero2)=>{
 }
 
 comparaNumero()**/
+
+// Exercícios de Funções
+
+ /** Exercício 1 
+
+let arrayDeNumeros=[ 2, 0.5, 4, 1, 5, 6, 20, 7, -10, 10, 9, -1, 1008]
+
+function segundoMaiorEMenor(array){
+    let menorNumero =arrayDeNumeros[0]
+    let maiorNumero =arrayDeNumeros[0]
+    let segundoMenor =arrayDeNumeros[0]
+    let segundoMaior =arrayDeNumeros[0]
+    for(numero of arrayDeNumeros){
+        if(numero<menorNumero){
+            menorNumero=numero
+        }
+        
+        if(numero>maiorNumero){
+            maiorNumero=numero
+        }    
+    }
+
+    let indexmenor = arrayDeNumeros.indexOf(menorNumero)
+    arrayDeNumeros.splice(indexmenor,1)
+    let indexmaior = arrayDeNumeros.indexOf(maiorNumero)
+    arrayDeNumeros.splice(indexmaior,1)
+    
+    
+
+    for(numero of arrayDeNumeros){
+        if(numero<segundoMenor){
+            segundoMenor=numero
+        }
+        if(numero>segundoMaior){
+            segundoMaior=numero
+        }    
+
+    }
+    console.log(arrayDeNumeros)
+
+    console.log (`${segundoMenor} é o segundo menor número e ${segundoMaior} é o segundo maior número da arrayDeNumeros `)
+}
+
+segundoMaiorEMenor(arrayDeNumeros)
+**/
