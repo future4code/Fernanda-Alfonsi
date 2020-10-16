@@ -14,6 +14,7 @@ class Post extends React.Component {
     numeroCurtidas: 0,
     comentando: false,
     numeroComentarios: 0
+    
   }
 
   onClickCurtida = () => {
@@ -33,6 +34,7 @@ class Post extends React.Component {
   onClickComentario = () => {
     this.setState({
       comentando: !this.state.comentando
+      
     })
   }
 
