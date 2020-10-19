@@ -9,7 +9,7 @@ class Etapa3 extends React.Component {
              <h3>ETAPA 3 - INFORMAÇÕES GERAIS DE ENSINO</h3> 
              <div>
                  <p>5. Por que você não terminou um curso de graduação?</p>
-                 <input value></input>
+                 <input value=""></input>
              </div>
              <div>
                  <p>6. Você fz algum curso complementar?</p>

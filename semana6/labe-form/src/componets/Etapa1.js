@@ -9,15 +9,15 @@ class Etapa1 extends React.Component {
              <h3>ETAPA 1 - DADOS GERAIS</h3> 
              <div>
                  <p>1. Qual seu nome?</p>
-                 <input value></input>
+                 <input value=""></input>
              </div>
              <div>
                  <p>2. Qual sua Idade?</p>
-                 <input value></input>
+                 <input value=""></input>
              </div>
              <div>
                  <p>3. Qual seu e-mail?</p>
-                 <input value></input>
+                 <input value=""></input>
              </div>
              <div>
                  <p>4. Qual sua escolaridade?</p>
