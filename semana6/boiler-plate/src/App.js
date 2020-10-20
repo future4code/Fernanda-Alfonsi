@@ -27,11 +27,15 @@ class App extends React.Component {
       filtro: ''
     }
 
-  componentDidUpdate() {
-
+  componentDidUpdate=()=>{
+    localStorage.setItem("tarefas", JSON.stringify(this.state.tarefas))
+  
   };
 
   componentDidMount() {
+    if(localStorage.getItem("tarefas")){
+      this.setState({tarefas:JSON.parse(localStorage.getItem("tarefas"))})
+    }
 
   };
 
@@ -43,10 +47,13 @@ class App extends React.Component {
     const novaTarefa = {
       id: Date.now(),
       texto:(this.state.inputValue),
-      completa: false
+      completa: false,
+      
     }
     const copiaArrayEstado = [...this.state.tarefas,novaTarefa ]
         this.setState({tarefas:copiaArrayEstado})
+        
+       
   }
 
   selectTarefa = (id) => {
@@ -64,7 +71,7 @@ class App extends React.Component {
   }
 
   onChangeFilter = (event) => {
-
+    this.setState({filtro: event.target.value})
   }
 
   render() {
@@ -90,7 +97,7 @@ class App extends React.Component {
 
         <InputsContainer>
           <label>Filtro</label>
-          <select value={this.state.filter} onChange={this.onChangeFilter}>
+          <select value={this.state.filtro} onChange={this.onChangeFilter}>
             <option value="">Nenhum</option>
             <option value="pendentes">Pendentes</option>
             <option value="completas">Completas</option>
