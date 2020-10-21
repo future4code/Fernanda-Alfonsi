@@ -52,7 +52,8 @@ class App extends React.Component {
     }
     const copiaArrayEstado = [...this.state.tarefas,novaTarefa ]
         this.setState({tarefas:copiaArrayEstado})
-        
+    
+    this.setState({inputValue:""})    
        
   }
 
