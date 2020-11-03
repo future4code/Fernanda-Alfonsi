@@ -7,7 +7,7 @@ import VerApagarPlay from "./VerApagarPlay";
 
 class CadastrarPlay extends React.Component {
   state = {
-    playlists: [],
+    
     playlistValue: "",
     cadastrar: true
   };
