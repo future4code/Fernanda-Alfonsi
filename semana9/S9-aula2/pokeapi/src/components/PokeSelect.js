@@ -1,35 +1,46 @@
-import React,{useState} from "react";
-import PokeCard from './components/PokeCard';
+import React, {useState, useEffect} from "react";
+import PokeCard from "./PokeCard";
+import axios from "axios"
+import styled from 'styled-components'
 
-
+const Seletor = styled.select`
+ border:solid 5px #195aab;
+ padding: 5px;
+`
 function PokeSelect() {
 
-    const[pokeName,setPokeName]=useState("")
+  const [pokeName,setPokeName]=useState("")
+  const [pokeList,setPokeList]=useState([])
 
   
-    useEffect(()=>{
-      pegaPokemon(pokeName)
-    }, [pokeList]);
-  
-    const pegaPokemon=(pokeName) =>{Axios.get(`https://pokeapi.co/api/v2/pokemon/${pokeName}`)
-    .then((resposta)=>{setPokeList(resposta.data.results);})
-    .catch((erro)=>{alert(`Ixi, deu Ruim. Não conseguimos achar os pokemons, o erro é ${erro}` )})
+  useEffect(()=>{
+    axios
+      .get("https://pokeapi.co/api/v2/pokemon/?limit=151")
+      .then(response => {setPokeList(response.data.results) })
+      .catch(err => {console.log(err)});
+  },[])
+   
+
+
+
+  const onChangePokemon=(event)=>{
+      setPokeName(event.target.value)
   }
-    
-    }
 
-    const onChanheSelect=(event)=>{
-        setPokeName(event.target.value)
-
-  return (
-    <div>
-      <select>
-        <option value={""}>nenhum</option>
-        <option value={pokename} onChange={onChanheSelect}>pokemon</option>
-      </select>
-      <PokeCard/>
-    </div>
-  );
+    return (
+      <div>
+        <Seletor onChange={onChangePokemon}>
+          <option value={""}>nenhum</option>
+          {pokeList.map((pokemon)=>{
+            return( 
+            <option key={pokemon.name}value={pokemon.name} > {pokemon.name}</option>
+            );
+          })}
+         
+        </Seletor>
+        {pokeName && <PokeCard pokeNome={pokeName}/>}
+      </div>
+    );
 }
 
 export default PokeSelect;
