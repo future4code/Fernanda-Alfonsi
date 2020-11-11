@@ -1,11 +1,19 @@
-import styled from "styled-components"
+
+import react, { useState } from "react"
 import PageMatch from "./components/PageMatch"
-
-
+import ChoiceMatch from "./components/ChoiceMatch"
 function App() {
+
+const [mudaPagina,setMudaPagina] = useState(true)
+
+// const mudarPage = ()=>{
+//  setMudaPagina(!mudaPagina)
+// }
+
   return (
+    
   <div>
-    <PageMatch/>
+    mudaPagina?<ChoiceMatch />:<PageMatch />
   </div>
     
   );
