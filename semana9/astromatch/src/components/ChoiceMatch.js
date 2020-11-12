@@ -1,68 +1,90 @@
+import react,{useState} from "react"
 import styled from "styled-components"
-import react from "react"
-// import coracaoMatch from "../components/img/"
+import axios from "axios"
+import relacao from "../img/relação.png"
+import titulo from "../img/título.png"
+import coracao from "../img/coração-planeta.png"
+import cometa from "../img/cometa.png"
 
-
-
-const AppContaineir = styled.div`
-
-display: flex;
-flex-direction:column;
-align-items:center;
-background-color: gray;
+const Titulo = styled.img`
+width: 200px;
+margin-right: 40px;
+margin-left:70px;
 `
+
+
 const AppDisplay = styled.div`
 display: flex;
 flex-direction:column;
 align-items:center;
 background-color:white;
 margin:15px;
-border: solid;
+border-radius:10%;
 width:400px;
 height:600px;
 `
 const Imagem = styled.img`
 width: 250px;
 height:350px;
-/* border-radius:50%; */
 margin:25px;
 border:solid;
 `
-const Botoes = styled.button`
+
+const BtMatch = styled.img`
+width: 70px;
+height:70px;
+border-radius:50%;
+margin: 0px 50px;
+border:none;
+`
+const BtPageMach = styled.img`
 width: 50px;
 height:50px;
 border-radius:50%;
 margin:2px;
-border:solid;
+border:none;
+
 `
-const Header = styled.header`
-display: flex;
-justify-content:center;
-`
+
 
 function ChoiceMatch(props) {
+
+  const[perfis,setPerfis]=useState({
+    profile: {
+      id: "",
+      age: "",
+      name: "",
+      photo: "",
+      bio: ""
+  }})
+
+  const profileUser=()=>{
+    axios
+    .get("https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:aluno/person")
+    .then((response)=>{setPerfis(response.profile)}).catch((error)=>{ console.log(error)})
+
+  }
   return (
-  <AppContaineir>
-    
+  
+    // fazer um map que pegue a perfis do estado
     <AppDisplay>
-    <Header>
-        <h3>Astromatch</h3>
-        <button onClick={''}>Match</button>
-        {/* <img src={coracaoMatch}  alt="icone para página de match" onClick={""}/> */}
-    </Header>
-    <hr/>
-      <Imagem src='https://img.elo7.com.br/product/main/1F61333/adesivo-decorativo-parede-buraco-tam-grande-qualquer-imagem.jpg' alt="imagm qualquer"/>
-      <p>nome do boy, idade</p>
-      <p>descrição</p>
-      
 
     <div>
-      < Botoes>x</ Botoes>
-      < Botoes>o</ Botoes>
+        <Titulo src={titulo} alt="Astromatch"/>
+        <BtPageMach src={relacao} onClick={props.onClickChangePage}/>
     </div>
+    <hr/>
+
+      <Imagem src={perfis.photo} alt="perfil"/>
+
+    <div>
+      < BtMatch src={cometa}/>
+      < BtMatch src={coracao}/>
+    </div>
+
     </AppDisplay>
     
-  </AppContaineir>
+  
     
   );
 }

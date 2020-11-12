@@ -1,20 +1,19 @@
 import styled from "styled-components"
-import react from "react"
-// import coracaoMatch from "../components/img/coracaoMatch.svg"
+import voltar from "../img/voltar.png"
+import titulo from "../img/título.png"
 
 
-
-const AppContaineir = styled.div`
-
-display: flex;
-flex-direction:column;
-align-items:center;
-background-color: gray;
+const BtPageChoice = styled.img`
+width: 50px;
+height:50px;
+border-radius:50%;
+margin:2px;
 `
+
 const AppDisplay = styled.div`
 background-color:white;
-margin:15px;
-border: solid;
+margin:30px;
+border-radius:10%;
 width:400px;
 height:600px;
 `
@@ -22,9 +21,13 @@ const MatchDisplay = styled.div`
 display: flex;
 
 `
+const Titulo = styled.img`
+width: 200px;
+margin-left: 40px;
+margin-right:80px;
+`
 const Header = styled.div`
-display: flex;
-justify-content:center;
+
 `
 const Imagem = styled.img`
 width: 50px;
@@ -37,24 +40,37 @@ const Button = styled.button`
 margin-left: 50px;
 `
 
-function PageMatch() {
+function PageMatch(props) {
   return (
-  <AppContaineir>
+
     
     <AppDisplay>
       <Header>
-        <h3>Astromatch</h3>
-        <Button>volta</Button>
-        {/* <img src='coracaoMatch'  alt="icone para página de match" onClick={""}/> */}
+        
+        <BtPageChoice src={voltar} onClick={props.onClickChangePage}/>
+        <Titulo src={titulo} alt="Astromatch"/>
+        
       </Header>
       <hr/>
       <MatchDisplay>
-        <Imagem src='https://img.elo7.com.br/product/main/1F61333/adesivo-decorativo-parede-buraco-tam-grande-qualquer-imagem.jpg' alt="imagm qualquer"/>
+        <Imagem src='https://zap.aeiou.pt/wp-content/uploads/2017/03/72480f6a43e88adf7e60321adcf856b2-783x450.jpeg' alt="imagm qualquer"/>
+        <p>nome do boy, idade</p>
+      </MatchDisplay>
+      <MatchDisplay>
+        <Imagem src='https://zap.aeiou.pt/wp-content/uploads/2017/03/72480f6a43e88adf7e60321adcf856b2-783x450.jpeg' alt="imagm qualquer"/>
+        <p>nome do boy, idade</p>
+      </MatchDisplay>
+      <MatchDisplay>
+        <Imagem src='https://zap.aeiou.pt/wp-content/uploads/2017/03/72480f6a43e88adf7e60321adcf856b2-783x450.jpeg' alt="imagm qualquer"/>
+        <p>nome do boy, idade</p>
+      </MatchDisplay>
+      <MatchDisplay>
+        <Imagem src='https://zap.aeiou.pt/wp-content/uploads/2017/03/72480f6a43e88adf7e60321adcf856b2-783x450.jpeg' alt="imagm qualquer"/>
         <p>nome do boy, idade</p>
       </MatchDisplay>
     </AppDisplay>
     
-  </AppContaineir>
+  
     
   );
 }
