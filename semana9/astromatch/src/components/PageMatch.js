@@ -1,7 +1,9 @@
 import styled from "styled-components"
 import voltar from "../img/voltar.png"
 import titulo from "../img/título.png"
-
+import React,{ useEffect, useState } from "react"
+import axios from "axios"
+import buracoNegro from "../img/buraco-negro.png"
 
 const BtPageChoice = styled.img`
 width: 50px;
@@ -19,55 +21,75 @@ height:600px;
 `
 const MatchDisplay = styled.div`
 display: flex;
-
 `
+const Body = styled.div`
+overflow: hidden;
+overflow-y: scroll;
+`
+
 const Titulo = styled.img`
 width: 200px;
 margin-left: 40px;
 margin-right:80px;
 `
-const Header = styled.div`
 
-`
-const Imagem = styled.img`
+const ImagemUser = styled.img`
 width: 50px;
 height:50px;
 border-radius:50%;
 margin:5px;
 border:none;
 `
-const Button = styled.button`
-margin-left: 50px;
+
+const BtClear = styled.img`
+width: 80px;
+height:80px;
+border-radius:50%;
+margin-left:35em;
 `
 
 function PageMatch(props) {
-  return (
 
-    
-    <AppDisplay>
-      <Header>
+  const[profileMatch,setProfileMatch]=useState([])
+  const[clear,setClear]=useState({})
+
+    useEffect(()=>{getProfileMatchUser()},[])
+
+  const getProfileMatchUser=()=>{
+    axios
+    .get(`https://us-central1-missao-newton.cloudfunctions.net/astroMatch/fernanda/matches`)
+    .then((response)=>{setProfileMatch(response.data.matches) (console.log("PageMatch",response))})
+    .catch((error)=>{ console.log(error.menssage)})
+  }
+
+  const putClearUser=(id,choice)=>{
+    axios
+    .get(`https://us-central1-missao-newton.cloudfunctions.net/astroMatch/fernanda/clear`)
+    .then((response)=>{(getProfileMatchUser()) (setClear(response.data))(console.log("put ok",response))})
+    .catch((error)=>{ console.log("putErr",error.menssage)})
+  }
+
+  const matchCrush = profileMatch.map((crush)=>{
+    return <MatchDisplay>
+        <ImagemUser src={crush.photo} alt={crush.name}/>
+        <p key={crush.id}>{crush.name}, {crush.age}</p>
         
+      </MatchDisplay>
+  });
+
+  return (
+    <AppDisplay>
+      <header>
         <BtPageChoice src={voltar} onClick={props.onClickChangePage}/>
         <Titulo src={titulo} alt="Astromatch"/>
-        
-      </Header>
+      </header>
       <hr/>
-      <MatchDisplay>
-        <Imagem src='https://zap.aeiou.pt/wp-content/uploads/2017/03/72480f6a43e88adf7e60321adcf856b2-783x450.jpeg' alt="imagm qualquer"/>
-        <p>nome do boy, idade</p>
-      </MatchDisplay>
-      <MatchDisplay>
-        <Imagem src='https://zap.aeiou.pt/wp-content/uploads/2017/03/72480f6a43e88adf7e60321adcf856b2-783x450.jpeg' alt="imagm qualquer"/>
-        <p>nome do boy, idade</p>
-      </MatchDisplay>
-      <MatchDisplay>
-        <Imagem src='https://zap.aeiou.pt/wp-content/uploads/2017/03/72480f6a43e88adf7e60321adcf856b2-783x450.jpeg' alt="imagm qualquer"/>
-        <p>nome do boy, idade</p>
-      </MatchDisplay>
-      <MatchDisplay>
-        <Imagem src='https://zap.aeiou.pt/wp-content/uploads/2017/03/72480f6a43e88adf7e60321adcf856b2-783x450.jpeg' alt="imagm qualquer"/>
-        <p>nome do boy, idade</p>
-      </MatchDisplay>
+     <Body>
+        {matchCrush}
+     </Body>
+      
+  
+     <BtClear onClick={()=>{putClearUser(clear.id,clear.choice)}} src={buracoNegro} alt="buraco negro clear"/>
     </AppDisplay>
     
   
