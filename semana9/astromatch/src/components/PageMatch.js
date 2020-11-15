@@ -64,7 +64,7 @@ function PageMatch(props) {
 
   const putClearUser=(id,choice)=>{
     axios
-    .get(`https://us-central1-missao-newton.cloudfunctions.net/astroMatch/fernanda/clear`)
+    .put(`https://us-central1-missao-newton.cloudfunctions.net/astroMatch/fernanda/clear`)
     .then((response)=>{(getProfileMatchUser()) (setClear(response.data))(console.log("put ok",response))})
     .catch((error)=>{ console.log("putErr",error.menssage)})
   }

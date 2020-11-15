@@ -4,14 +4,14 @@ import PageMatch from "./components/PageMatch"
 import ChoiceMatch from "./components/ChoiceMatch"
 import styled from "styled-components"
 
-// import axios from "axios"
+
 
 const AppContaineir = styled.div`
 display: flex;
 flex-direction:column;
 align-items:center;
+bottom:0;
 background-image:url("https://super.abril.com.br/wp-content/uploads/2018/07/istock-524554638.jpg");
-
 `
 
 function App() {
