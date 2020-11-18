@@ -1,6 +1,20 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom';
+import styled from 'styled-components'
+import spaceship from '../img/spaceship-3827533_1920.jpg'
 
+const HomeContainer=styled.div`
+
+p{
+  color:white;
+  font-size: 100px;
+}
+`
+const ButtonHome=styled.button`
+background-color: black;
+color:white;
+padding:1em;
+`
 
 function HomePage() {
 
@@ -11,14 +25,16 @@ function HomePage() {
   }
 
   const goToApplication=()=>{
-    history.push('/applicationForm')
+    history.push('listTrips')
   }
   return (
-    <div>
-      <p>HomePage</p>
-      <button onClick={goToLogin}> ir  para login</button>
-      <button onClick={goToApplication}> ir  para formulário de inscrição</button>
-    </div>
+    < HomeContainer>
+      <p>LabeX</p>
+      <ButtonHome onClick={goToLogin}> Fazer Login</ButtonHome>
+      <ButtonHome onClick={goToApplication}> viaje com a gente</ButtonHome>
+    </ HomeContainer>
+  
+    
   );
 }
 
