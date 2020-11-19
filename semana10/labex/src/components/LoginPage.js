@@ -11,7 +11,7 @@ function LoginPage() {
     const token = localStorage.getItem("token");
 
     if (token) {
-      history.push("/tripDetails");
+      history.push("/admList");
     }
     
   }, [history]);
@@ -37,7 +37,7 @@ function LoginPage() {
       )
       .then((res) => {
         localStorage.setItem("token", res.data.token);
-        history.push("/trip-detail");
+        history.push("/admList");
       })
       .catch((err) => {
         console.log(err);

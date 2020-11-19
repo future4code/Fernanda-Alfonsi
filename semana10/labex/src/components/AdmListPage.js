@@ -1,7 +1,10 @@
+// import axios from 'axios';
 import React, { useEffect } from 'react'
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components'
 import { useRequestData } from "../hooks/useRequestData";
+import { useProtectedPage } from "../hooks/useProtectPage";
+// import { useParams, useHistory } from 'react-router-dom'
 
 
 const ContainerList= styled.div`
@@ -31,40 +34,45 @@ const Card = styled.div`
  }
 `
 
-function ListTripsPage() {
+function AdmListPage() {
+    useProtectedPage();
   
   const getSpaceTrip=useRequestData(
     "https://us-central1-labenu-apis.cloudfunctions.net/labeX/fernanda-dumont/trips", undefined
     
   );
   console.log(getSpaceTrip)
+
   const history=useHistory()
 
-  const goToApplication=(id)=>{
-    history.push(`/applicationForm/${id}`)
-    
+  const goToDetail=(id)=>{
+    history.push(`/tripDetails/${id}`)
   } 
 
-  
+  const goToCreateTrip=(id)=>{
+    history.push(`createTrip`)
+  } 
     const list= getSpaceTrip && getSpaceTrip.trips.map((trip,i) =>{
       return (< Card>
          <img src={`https://picsum.photos/200/200?a=${i}]`}/>
-         
           <h4 key={trip.id}>{ trip.name}</h4>
-          <p >{ trip.description}</p>
           <p>planeta: {trip.planet}</p>
-          <p>duração: {trip.durationInDays}</p>
-          <p>Data: {trip.date}</p>
-          <button onClick={()=>{goToApplication(trip.id)}}>Quero ir</button>
+          <button onClick={()=>{goToDetail(trip.id)}}> Ver detalhes</button>
       </ Card>
       );
     })
 
-    return(<ContainerList>
-      {list}
-    </ContainerList>
+    return(<div>
+            <ContainerList>
+                {list}
+
+      
+            </ContainerList>
+            <button onClick={goToCreateTrip}>Criar viagem </button>
+    </div>
+    
     );
   
 }
 
-export default ListTripsPage;
+export default AdmListPage;

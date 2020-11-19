@@ -8,6 +8,7 @@ const HomeContainer=styled.div`
 p{
   color:white;
   font-size: 100px;
+  font-family: 'Audiowide', cursive;
 }
 `
 const ButtonHome=styled.button`
@@ -24,14 +25,14 @@ function HomePage() {
     history.push('/login')
   }
 
-  const goToApplication=()=>{
+  const goToListTrips=()=>{
     history.push('listTrips')
   }
   return (
     < HomeContainer>
       <p>LabeX</p>
       <ButtonHome onClick={goToLogin}> Fazer Login</ButtonHome>
-      <ButtonHome onClick={goToApplication}> viaje com a gente</ButtonHome>
+      <ButtonHome onClick={goToListTrips}> viaje com a gente</ButtonHome>
     </ HomeContainer>
   
     

@@ -5,6 +5,7 @@ import ListTripsPage from '../components/ListTripsPage'
 import CreateTripPage from '../components/CreateTripPage'
 import TripDetailsPage from '../components/TripDetailsPage'
 import LoginPage from '../components/LoginPage'
+import AdmListPage from '../components/AdmListPage'
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 
 function Router() {
@@ -15,7 +16,7 @@ function Router() {
         <HomePage/>
       </Route>
 
-      <Route exact path="/applicationForm">
+      <Route exact path="/applicationForm/:id">
         <ApplicationFormPage/>
       </Route>
 
@@ -27,7 +28,11 @@ function Router() {
        <LoginPage/>
       </Route>
 
-      <Route exact path="/tripDetails">
+      <Route exact path="/admList">
+        <AdmListPage/>
+      </Route>
+
+      <Route exact path="/tripDetails/:id">
         <TripDetailsPage/>
       </Route>
 
