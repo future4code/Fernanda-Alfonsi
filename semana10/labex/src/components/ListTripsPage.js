@@ -37,6 +37,7 @@ function ListTripsPage() {
     "https://us-central1-labenu-apis.cloudfunctions.net/labeX/fernanda-dumont/trips", undefined
     
   );
+
   console.log(getSpaceTrip)
   const history=useHistory()
 
@@ -49,7 +50,6 @@ function ListTripsPage() {
     const list= getSpaceTrip && getSpaceTrip.trips.map((trip,i) =>{
       return (< Card>
          <img src={`https://picsum.photos/200/200?a=${i}]`}/>
-         
           <h4 key={trip.id}>{ trip.name}</h4>
           <p >{ trip.description}</p>
           <p>planeta: {trip.planet}</p>

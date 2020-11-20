@@ -35,6 +35,7 @@ const Card = styled.div`
 `
 
 function AdmListPage() {
+
     useProtectedPage();
   
   const getSpaceTrip=useRequestData(
