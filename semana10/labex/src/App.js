@@ -1,5 +1,6 @@
 import React from 'react'
 import Router from './router/Router'
+// import Header from './components/Header'
 import styled from 'styled-components'
 import spaceship from './img/spaceship-3827533_1920.jpg'
 import "./App.css"
@@ -20,6 +21,7 @@ background-size:cover;
 function App() {
   return (
     <AppContainer>
+        {/* <Header/> */}
         <Router/>
     </AppContainer>
        

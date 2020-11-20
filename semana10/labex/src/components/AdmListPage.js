@@ -1,18 +1,14 @@
-// import axios from 'axios';
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components'
 import { useRequestData } from "../hooks/useRequestData";
 import { useProtectedPage } from "../hooks/useProtectPage";
-// import { useParams, useHistory } from 'react-router-dom'
-
 
 const ContainerList= styled.div`
   display:flex;
   justify-content:space-around;
   width:100vw;
  `
-
 const Card = styled.div`
  width:200px;
  margin:1em;
@@ -33,7 +29,6 @@ const Card = styled.div`
    
  }
 `
-
 function AdmListPage() {
 
     useProtectedPage();
@@ -66,8 +61,6 @@ function AdmListPage() {
     return(<div>
             <ContainerList>
                 {list}
-
-      
             </ContainerList>
             <button onClick={goToCreateTrip}>Criar viagem </button>
     </div>

@@ -6,12 +6,17 @@ import CreateTripPage from '../components/CreateTripPage'
 import TripDetailsPage from '../components/TripDetailsPage'
 import LoginPage from '../components/LoginPage'
 import AdmListPage from '../components/AdmListPage'
+// import Header from '../components/Header'
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 
 function Router() {
   return (
     <BrowserRouter>
     <Switch>
+      {/* <Route exact path="/Header">
+        <Header/>
+      </Route> */}
+
       <Route exact path="/">
         <HomePage/>
       </Route>

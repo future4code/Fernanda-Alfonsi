@@ -8,7 +8,7 @@ import axios from "axios";
 const ContainerForm= styled.div`
   display:flex;
   flex-direction: column;
-  /* justify-content:space-around; */
+  align-items: center;
   h1{
     color:white;
   }
@@ -24,24 +24,7 @@ function ApplicationFormPage() {
   } 
 
   const { id } = useParams()
-
-
-  const submitForm = () => {
-    
-    axios
-        .post(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/fernanda-dumont/trips/${id}/apply`,form)
-        .then((response) => {
-         alert("Obrigada por se inscrver, estamos na torcida!")
-         console.log("OK", response)
-          
-            console.log(response)
-        })
-        .catch(e => {
-            console.log(e)
-        })
-    }
-  
-    const { form, onChange } = useForm({ name: "", age: "", profession: "",country:"",application:"" });
+  const { form, onChange } = useForm({ name: "", age: "", profession: "",country:"",applicationText:"" });
   
     const handleInputChange = (event) => {
       const { value, name } = event.target;
@@ -52,8 +35,24 @@ function ApplicationFormPage() {
     const onSubmitForm = (event) => {
       event.preventDefault();
       submitForm()
-      console.log(form);
+      
     };
+
+
+  const submitForm = () => {
+    
+    axios
+        .post(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/fernanda-dumont/trips/${id}/apply`,form)
+        .then((response) => {
+         alert("Obrigada por se inscrver, estamos na torcida!", response.data.message)
+         console.log("OK", response)
+        })
+        .catch(e => {
+            console.log(e)
+        })
+    }
+  
+    
   
     return (
       <ContainerForm>
@@ -65,7 +64,7 @@ function ApplicationFormPage() {
             onChange={handleInputChange}
             name={"name"}
             type={"text"}
-            pattern={"[A-Za-z /s]{3,}"}
+            pattern={"(.*[a-z]){3}"}
             required
           />
           <input
@@ -83,7 +82,7 @@ function ApplicationFormPage() {
             onChange={handleInputChange}
             name={"profession"}
             type={"text"}
-            pattern={"[A-Za-z /s]{10,}"}
+            pattern={"(.*[a-z]){10}"}
             required
           />
           <select placeholder={"País"} 
@@ -104,15 +103,15 @@ function ApplicationFormPage() {
           </select>
           
            <input
-            value={form.pplication}
-            placeholder={"Por que é um bom candidato?"}
+            value={form.applicationText}
+            placeholder={"Por que quer se candidatar?"}
             onChange={handleInputChange}
-            name={"application"}
+            name={"applicationText"}
             type={"text"}
-            pattern={"[A-Z a-z /s]{30,}"}
+            pattern={"(.*[a-z]){30}"}
             required
           />
-          <button>Inscrever-se</button>
+          <button onClick={onSubmitForm}>Inscrever-se</button>
         </form>
         <div>
           

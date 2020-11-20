@@ -54,33 +54,6 @@ function LoginPage() {
   );
 }
 
-  // const history=useHistory()
-
-  // const goToCreateTrip=()=>{
-  //   history.push('/createTrip')
-  // }
-
-  // const goToTripDetails=()=>{
-  //   history.push('/tripDetails')
-  // }
-
-  // const goToListTrip=()=>{
-  //   history.push('/listTrips')
-  // }
-
-  // const goToHome=()=>{
-  //   history.push('/')
-  // }
-  // return (
-  //   <div>
-  //     <p>LoginPage</p>
-  //     <button onClick={goToCreateTrip}>Criar Viagem</button>
-  //     <button onClick={goToTripDetails}>Detalhes das Viagens</button>
-  //     <button onClick={goToListTrip}>Listar Viagens</button>
-  //     <button onClick={goToHome}>Voltar para Home</button>
-      
-  //   </div>
-  // );
-// }
+  
 
 export default LoginPage;
