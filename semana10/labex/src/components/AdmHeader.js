@@ -24,19 +24,18 @@ border-radius:30px;
 font-size: 20px;
 `
 
-const Header=() =>{
+const AdmHeader=() =>{
 
   const history = useHistory()
 
 
-  const goToLogin = () => {
-    history.push("/login")
+  const logout = () => {
+    window.localStorage.clear();
+    history.push("/");
   };
 
-
-
-  const goToListTrips = () => {
-    history.push("/listTrips")
+  const goToCreateList = () => {
+    history.push("/createTrip")
   };
 
   const goToHome = () => {
@@ -47,10 +46,10 @@ const Header=() =>{
     < HeaderContainer>
       <p>LabeX</p>
         <ButtonHeader onClick={goToHome}> Home </ButtonHeader>
-        <ButtonHeader onClick={goToListTrips}> viaje com a gente</ButtonHeader>
-        <ButtonHeader onClick={goToLogin}> Fazer Login</ButtonHeader>
+        <ButtonHeader onClick={goToCreateList}> Criar Viagens</ButtonHeader>
+        <ButtonHeader onClick={logout}> Fazer Logout</ButtonHeader>
     </ HeaderContainer>
   );
 }
 
-export default Header;
+export default AdmHeader;

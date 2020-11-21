@@ -4,16 +4,46 @@ import {useForm} from '../hooks/useForm'
 import { useProtectedPage } from "../hooks/useProtectPage";
 import styled from 'styled-components'
 import axios from "axios";
+import AdmHeader from './AdmHeader'
+
 
 const ContainerForm= styled.div`
-  display:flex;
-  flex-direction: column;
-  align-items: center;
-  h1{
-    color:white;
-  }
- `
+display:flex;
+flex-direction: column;
+align-items: center;
+h1{
+  color:white;
+}
+height:100vh;
+`
+const Form= styled.form`
+display:flex;
+flex-direction: column;
+align-items: center;
+margin:2em;
+`
+const Input= styled.input`
+padding: 10px;
+width: 300px;
+margin: 0.5em;
+`
 
+const Select= styled.select`
+padding: 10px;
+width: 320px;
+margin: 0.5em;
+
+`
+const ButtonForm=styled.button`
+background-color: rgba(0,0,0,0.8);
+height:70px;
+margin-top:1.5em;
+color:white;
+padding:0.5em;
+font-family: 'Audiowide', cursive;
+border-radius:30px;   
+font-size: 20px;
+`
 function CreateTripPage() {
  
   const history=useHistory()
@@ -58,10 +88,11 @@ function CreateTripPage() {
   
   return (
     <div>
+      <AdmHeader/>
       <ContainerForm>
         <h1>Criar Viagem </h1>
-        <form onSubmit={onSubmitForm}>
-          <input
+        <Form onSubmit={onSubmitForm}>
+          <Input
             value={form.name}
             placeholder={"Nome da Viagem"}
             onChange={handleInputChange}
@@ -70,7 +101,7 @@ function CreateTripPage() {
             pattern={"(.*[a-z]){5}"}
             required
           />
-          <select placeholder={"Planeta"} 
+          <Select placeholder={"Planeta"} 
           onChange={handleInputChange} 
           value={form.planet}
           name={"planet"}
@@ -85,9 +116,9 @@ function CreateTripPage() {
             <option  key="Urano" value="Urano">Urano</option>
             <option  key="Netuno" value="Netuno">Netuno</option>
             <option  key="Plutão" value="Plutão">Plutão</option>
-          </select>
+          </Select>
           
-          <input
+          <Input
             value={form.durationInDays}
             placeholder={"Duração em Dias"}
             onChange={handleInputChange}
@@ -96,7 +127,7 @@ function CreateTripPage() {
             min="50"
             required
           />
-          <input
+          <Input
             value={form.date}
             placeholder={"Data"}
             onChange={handleInputChange}
@@ -106,7 +137,7 @@ function CreateTripPage() {
             required
           />
           
-           <input
+           <Input
             value={form.description}
             placeholder={"Descrição da Viagem"}
             onChange={handleInputChange}
@@ -115,12 +146,9 @@ function CreateTripPage() {
             pattern={"(.*[a-z]){30}"}
             required
           />
-          <button onClick={onSubmitForm}>Inscrever-se</button>
-        </form>
-        <div>
-          
-          <button onClick={goToHome}>Voltar para Home</button>
-        </div>
+          <ButtonForm onClick={onSubmitForm}>Inscrever-se</ButtonForm>
+        </Form>
+        
       
       </ContainerForm>
     </div>

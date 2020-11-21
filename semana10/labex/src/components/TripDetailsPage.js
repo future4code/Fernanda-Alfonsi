@@ -3,10 +3,12 @@ import axios from "axios";
 import { useProtectedPage } from "../hooks/useProtectPage";
 import styled from 'styled-components'
 import { useParams, useHistory } from 'react-router-dom'
+import AdmHeader from "./AdmHeader";
 
 const DetailContainer = styled.div`
  display:flex;
  justify-content:space-around;
+ height:100vh;
  `
 const Card = styled.div`
  width:500px;
@@ -99,7 +101,8 @@ function TripDetailsPage() {
 
   
   const candidatos = candidates.map((candidate,i)=>{
-    return(<div>
+    return(
+    <div>
       <Detail>
        <Photo src={`https://picsum.photos/200/200?a=${i}]`}/>
         <p key={candidate.id}>Olá meu nome é {candidate.name}, tenho {candidate.age} anos, vivo no {candidate.country} e sou {candidate.profession}</p>
@@ -112,9 +115,10 @@ function TripDetailsPage() {
     );
   })
 
-  return (<div>
+  return (
+  <div>
+      <AdmHeader/>
       <DetailContainer>
-      
         <Card>
           <h2>Detalhes da Viagen</h2>
           <p>Atividade: {trips.name}</p>
@@ -128,11 +132,8 @@ function TripDetailsPage() {
           <h2>Controle de viajantes</h2>
           <h4>Atividade: {trips.name}</h4>
           {candidatos}
-
         </Card>
-
       </DetailContainer>
-      <button onClick={goToHome}> Voltar para home </button>
   </div>
     
 

@@ -3,7 +3,8 @@ import { useParams,useHistory } from 'react-router-dom'
 import {useForm} from '../hooks/useForm'
 import styled from 'styled-components'
 import axios from "axios";
-
+import {Countries} from "./Countries"
+import Header from './Header'
 
 const ContainerForm= styled.div`
   display:flex;
@@ -11,10 +12,40 @@ const ContainerForm= styled.div`
   align-items: center;
   h1{
     color:white;
+    
   }
+  height:100vh;
  `
+const Form= styled.form`
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  margin:2em;
 
-function ApplicationFormPage() {
+`
+const Input= styled.input`
+  padding: 10px;
+  width: 300px;
+  margin: 0.5em;
+`
+
+const Select= styled.select`
+  padding: 10px;
+  width: 320px;
+  margin: 0.5em;
+  
+`
+const ButtonForm=styled.button`
+background-color: rgba(0,0,0,0.8);
+height:70px;
+margin-top:1.5em;
+color:white;
+padding:0.5em;
+font-family: 'Audiowide', cursive;
+border-radius:30px;   
+font-size: 20px;
+`
+function ApplicationFormPage(props) {
 
 
   const history=useHistory()
@@ -25,7 +56,7 @@ function ApplicationFormPage() {
 
   const { id } = useParams()
   const { form, onChange } = useForm({ name: "", age: "", profession: "",country:"",applicationText:"" });
-  
+ 
     const handleInputChange = (event) => {
       const { value, name } = event.target;
   
@@ -55,10 +86,12 @@ function ApplicationFormPage() {
     
   
     return (
-      <ContainerForm>
+      <div>
+        <Header/>
+        <ContainerForm>
         <h1>Formulário de Inscrição</h1>
-        <form onSubmit={onSubmitForm}>
-          <input
+        <Form onSubmit={onSubmitForm}>
+          <Input
             value={form.name}
             placeholder={"Nome"}
             onChange={handleInputChange}
@@ -67,7 +100,8 @@ function ApplicationFormPage() {
             pattern={"(.*[a-z]){3}"}
             required
           />
-          <input
+          
+          <Input
             value={form.age}
             placeholder={"Idade"}
             onChange={handleInputChange}
@@ -76,7 +110,7 @@ function ApplicationFormPage() {
             min="18"
             required
           />
-          <input
+          <Input
             value={form.profession}
             placeholder={"Profissão"}
             onChange={handleInputChange}
@@ -85,24 +119,16 @@ function ApplicationFormPage() {
             pattern={"(.*[a-z]){10}"}
             required
           />
-          <select placeholder={"País"} 
-          onChange={handleInputChange} 
-          value={form.country}
-          name={"country"}
-          type={"text"}
-          required>
-            <option  key="Argentina" value="Argentina">Argentina</option>
-            <option  key="Brasil" value="Brasil">Brasil</option>
-            <option  key="China" value="China">China</option>
-            <option  key="Cuba" value="Cuba">Cuba</option>
-            <option  key="Espanha" value="Espanha">Espanha</option>
-            <option  key="Estados Unidos" value="Estados Unidos">Estados Unidos</option>
-            <option  key="Japão" value="Japão">Japão</option>
-            <option  key="México" value="México">México</option>
-            <option  key="Rússia" value="Rússia">Rússia</option>
-          </select>
+          <Select placeholder={"País"} 
+            onChange={handleInputChange} 
+            value={form.country}
+            name={"country"}
+            type={"text"}
+            required>
+            <Countries/>
+          </Select>
           
-           <input
+           <Input
             value={form.applicationText}
             placeholder={"Por que quer se candidatar?"}
             onChange={handleInputChange}
@@ -111,14 +137,12 @@ function ApplicationFormPage() {
             pattern={"(.*[a-z]){30}"}
             required
           />
-          <button onClick={onSubmitForm}>Inscrever-se</button>
-        </form>
-        <div>
-          
-          <button onClick={goToHome}>Voltar para Home</button>
-        </div>
+          <ButtonForm onClick={onSubmitForm}>Inscrever-se</ButtonForm>
+        </Form>
+        
+        </ContainerForm>
+      </div>
       
-      </ContainerForm>
     
   
   

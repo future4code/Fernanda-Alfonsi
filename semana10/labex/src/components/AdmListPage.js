@@ -3,10 +3,11 @@ import { useHistory } from 'react-router-dom';
 import styled from 'styled-components'
 import { useRequestData } from "../hooks/useRequestData";
 import { useProtectedPage } from "../hooks/useProtectPage";
+import AdmHeader from './AdmHeader';
 
 const ContainerList= styled.div`
-  display:flex;
-  justify-content:space-around;
+   display:grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   width:100vw;
  `
 const Card = styled.div`
@@ -58,11 +59,13 @@ function AdmListPage() {
       );
     })
 
-    return(<div>
+    return(
+    <div>
+      <AdmHeader/>
             <ContainerList>
                 {list}
             </ContainerList>
-            <button onClick={goToCreateTrip}>Criar viagem </button>
+            
     </div>
     
     );

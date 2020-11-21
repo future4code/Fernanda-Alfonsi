@@ -2,11 +2,11 @@ import React, { useEffect } from 'react'
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components'
 import { useRequestData } from "../hooks/useRequestData";
-
+import Header from './Header'
 
 const ContainerList= styled.div`
-  display:flex;
-  justify-content:space-around;
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   width:100vw;
  `
 
@@ -60,9 +60,14 @@ function ListTripsPage() {
       );
     })
 
-    return(<ContainerList>
-      {list}
-    </ContainerList>
+    return(
+      <div>
+        <Header/>
+        <ContainerList>
+          {list}
+        </ContainerList>
+      </div>
+    
     );
   
 }
