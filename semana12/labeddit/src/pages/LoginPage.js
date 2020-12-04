@@ -1,88 +1,89 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from 'react-router-dom';
-import axios from "axios";
+// import axios from "axios";
 import styled from 'styled-components'
+import {useUnProtectedPage } from '../hooks/useUnProtectedPage';
+import {TextField, Button} from '@material-ui/core'
 // import Header from './Header'
-
-const ContainerForm= styled.div`
-  display:flex;
-  flex-direction: column;
-  align-items: center;
-  h1{
-    color:white;
-    margin-top:80px;
-  }
-  height:100vh;
- `
-const Input= styled.input`
-  padding: 10px;
-  width: 300px;
-  margin: 0.5em;
+import { login } from '../services/user';
+import {useForm} from "../hooks/useForm"
+import { goToRegister } from "../router/cordinator"
+const ContainerFormLogin = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 85vw;
+    max-width: 465px;
+    margin: 0 auto;
 `
-const ButtonForm=styled.button`
-background-color: rgba(0,0,0,0.8);
-height:70px;
-margin-top:1.5em;
-color:white;
-padding:0.5em;
-font-family: 'Audiowide', cursive;
-border-radius:30px;   
-font-size: 20px;
+const FormContainer = styled.form`
+    display: flex;
+    flex-direction: column;
+    height: 24vh;
+    justify-content: space-around;
+    margin-bottom: 15px;
 `
+// const ButtonForm=styled.button`
+// background-color: rgba(0,0,0,0.8);
+// height:70px;
+// margin-top:1.5em;
+// color:white;
+// padding:0.5em;
+// font-family: 'Audiowide', cursive;
+// border-radius:30px;   
+// font-size: 20px;
+// `
 function LoginPage() {
-  // const [admEmail, setAdmEmail] = useState("");
-  // const [admPassword, setAdmPassword] = useState("");
-  // const history = useHistory();
+  useUnProtectedPage()
+  const history = useHistory();
+  const {form, onChange} = useForm({email: "", password: ""})
 
-  // // useEffect(() => {
-  // //   const token = localStorage.getItem("token");
+    const handleInputChange = (event) => {
+        const {value, name} = event.target
 
-  // //   // if (token) {
-  // //   //   history.push("/admList");
-  // //   // }
-    
-  // // }, [history]);
+        onChange(value, name)
+    }
 
-  // const handleEmail = (event) => {
-  //   setAdmEmail(event.target.value);
-  // };
+    const handleSubmission = (event) => {
+        event.preventDefault()
+        login(form, history)
+    }
 
-  // const handlePassword = (event) => {
-  //   setAdmPassword(event.target.value);
-  // };
 
-  // const login = () => {
-  //   const body = {
-  //     email: admEmail,
-  //     password: admPassword
-  //   };
-
-  //   axios
-  //     .post(
-  //       "https://us-central1-labenu-apis.cloudfunctions.net/labeX/fernanda-dumont/login",
-  //       body
-  //     )
-  //     .then((res) => {
-  //       localStorage.setItem("token", res.data.token);
-  //       // history.push("/admList");
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // };
-
-  return (
-    <div>
-      {/* <Header/> */}
-      <ContainerForm>
-        <h1>Login</h1>
-        <Input value={''} onChange={''} type="email" placeholder="E-mail"/>
-        <Input value={''} onChange={''} type="password" placeholder="Senha"/>
-        <ButtonForm onClick={''}>Fazer login</ButtonForm>
-        </ContainerForm>
-    </div>
-    
-  );
+    return(
+      <ContainerFormLogin>
+          {/* <img src={logo} /> */}
+          <FormContainer onSubmit={handleSubmission} >
+              <TextField 
+                  label="E-mail"
+                  variant="outlined"
+                  type="email"
+                  name="email"
+                  value={form.email}
+                  onChange={handleInputChange}
+              />
+              <TextField  
+                  label="Senha"
+                  variant="outlined"                
+                  type="password"
+                  name="password"
+                  value={form.password}
+                  onChange={handleInputChange}
+              />
+              <Button
+                  variant="contained"
+                  color="primary"
+                  type="submit"
+              >
+                  Login
+              </Button>
+          </FormContainer>
+          <Button 
+          onClick={()=>goToRegister(history)}
+          >
+              Não tem Login? Clique aqui
+          </Button>
+      </ContainerFormLogin>
+  )
 }
 
   

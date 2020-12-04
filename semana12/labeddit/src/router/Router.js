@@ -1,5 +1,4 @@
 import React from 'react'
-
 import FeedPage from '../pages/FeedPage'
 import LoginPage from '../pages/LoginPage'
 import RegisterFormPage from '../pages/RegisterFormPage'
@@ -17,19 +16,18 @@ function Router() {
         <FeedPage/>
       </Route>
 
-      <Route exact path="login">
+      <Route exact path="/login">
         <LoginPage/>
       </Route>
 
-      <Route exact path="/register/:id">
+      <Route exact path="/register">
         <RegisterFormPage/>
       </Route>
 
-      <Route exact path="/post">
+      <Route exact path="/post/:id">
         <PostPage/>
       </Route>
 
-     
       <Route path="/error">
         <ErrorPage/>
       </Route>

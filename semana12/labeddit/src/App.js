@@ -11,7 +11,7 @@ height:100%;
 /* background-image: url('');
 background-repeat: no-repeat;
 background-size:cover; */
-
+background-color:#e6e4da;
 `
 
 
