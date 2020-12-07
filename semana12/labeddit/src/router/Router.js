@@ -1,15 +1,14 @@
 import React from 'react'
-import FeedPage from '../pages/FeedPage'
-import LoginPage from '../pages/LoginPage'
-import RegisterFormPage from '../pages/RegisterFormPage'
-import PostPage from '../pages/PostPage'
+import FeedPage from '../pages/FeedPage/FeedPage'
+import LoginPage from '../pages/LoginPage/LoginPage'
+import RegisterFormPage from '../pages/RegisterFormPage/RegisterFormPage'
+import PostPage from '../pages/PostPage/PostPage'
 import ErrorPage from '../pages/ErrorPage'
-
-import { BrowserRouter, Route, Switch } from "react-router-dom"
+import {Route, Switch } from "react-router-dom"
 
 function Router() {
   return (
-    <BrowserRouter>
+    // <BrowserRouter>
     <Switch>
       
       <Route exact path="/">
@@ -33,7 +32,7 @@ function Router() {
       </Route>
 
     </Switch >
-  </BrowserRouter>
+  // </BrowserRouter>
   
 
   );

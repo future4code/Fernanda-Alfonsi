@@ -1,41 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useHistory } from 'react-router-dom';
-// import axios from "axios";
 import styled from 'styled-components'
-import {useUnProtectedPage } from '../hooks/useUnProtectedPage';
-import {TextField, Button} from '@material-ui/core'
-// import Header from './Header'
-import { login } from '../services/user';
-import {useForm} from "../hooks/useForm"
-import { goToRegister } from "../router/cordinator"
-const ContainerFormLogin = styled.div`
-    display: flex;
-    flex-direction: column;
-    width: 85vw;
-    max-width: 465px;
-    margin: 0 auto;
-`
-const FormContainer = styled.form`
-    display: flex;
-    flex-direction: column;
-    height: 24vh;
-    justify-content: space-around;
-    margin-bottom: 15px;
-`
-// const ButtonForm=styled.button`
-// background-color: rgba(0,0,0,0.8);
-// height:70px;
-// margin-top:1.5em;
-// color:white;
-// padding:0.5em;
-// font-family: 'Audiowide', cursive;
-// border-radius:30px;   
-// font-size: 20px;
-// `
+import {useUnProtectedPage } from '../../hooks/useUnProtectedPage';
+import {TextField, Button,spacing} from '@material-ui/core'
+import { login } from '../../services/user';
+import {useForm} from "../../hooks/useForm"
+import { goToRegister } from "../../router/cordinator"
+import {ContainerFormLogin,FormContainer,TextFieldStyled,ButtonEffect} from './styled'
+
+
+  
 function LoginPage() {
   useUnProtectedPage()
   const history = useHistory();
   const {form, onChange} = useForm({email: "", password: ""})
+
+//   const theme = {
+//     spacing: 8,
+//   }
 
     const handleInputChange = (event) => {
         const {value, name} = event.target
@@ -51,9 +33,10 @@ function LoginPage() {
 
     return(
       <ContainerFormLogin>
-          {/* <img src={logo} /> */}
+          
           <FormContainer onSubmit={handleSubmission} >
-              <TextField 
+             
+              <TextFieldStyled 
                   label="E-mail"
                   variant="outlined"
                   type="email"
@@ -61,7 +44,9 @@ function LoginPage() {
                   value={form.email}
                   onChange={handleInputChange}
               />
-              <TextField  
+             
+             
+              <TextFieldStyled  
                   label="Senha"
                   variant="outlined"                
                   type="password"
@@ -69,13 +54,8 @@ function LoginPage() {
                   value={form.password}
                   onChange={handleInputChange}
               />
-              <Button
-                  variant="contained"
-                  color="primary"
-                  type="submit"
-              >
-                  Login
-              </Button>
+             
+              <ButtonEffect> Login </ButtonEffect>
           </FormContainer>
           <Button 
           onClick={()=>goToRegister(history)}

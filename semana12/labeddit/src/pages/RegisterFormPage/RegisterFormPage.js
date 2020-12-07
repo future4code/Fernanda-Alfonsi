@@ -1,28 +1,10 @@
 import React from 'react';
-import {useForm} from "../hooks/useForm"
-import {TextField, Button} from '@material-ui/core'
-// import logo from '../../assets/logo.png'
-// import { FormContainer, SignupPageContainer } from './styles';
+import {useForm} from "../../hooks/useForm"
 import { useHistory } from 'react-router-dom'
-import {signup} from "../services/user"
-import {useUnProtectedPage} from '../hooks/useUnProtectedPage'
-import styled from 'styled-components'
+import {signup} from "../../services/user"
+import {useUnProtectedPage} from '../../hooks/useUnProtectedPage'
+import {SignupPageContainer,FormContainer,TextFieldStyled,ButtonEffect} from './styled'
 
-const SignupPageContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    width: 85vw;
-    max-width: 465px;
-    margin: 0 auto;
-`
-
-const FormContainer = styled.form`
-    display: flex;
-    flex-direction: column;
-    height: 30vh;
-    justify-content: space-around;
-    margin-bottom: 15px;
-`
 
 function RegisterFormPage() {
   useUnProtectedPage()
@@ -45,14 +27,14 @@ function RegisterFormPage() {
       <SignupPageContainer>
           {/* <img src={logo} /> */}
           <FormContainer onSubmit={handleSubmission} >
-              <TextField 
+              <TextFieldStyled
                   label="Nome"
                   variant="outlined"
                   name="username"
                   value={form.username}
                   onChange={handleInputChange}
               />
-              <TextField 
+              <TextFieldStyled
                   label="E-mail"
                   variant="outlined"
                   type="email"
@@ -60,7 +42,7 @@ function RegisterFormPage() {
                   value={form.email}
                   onChange={handleInputChange}
               />
-              <TextField  
+              <TextFieldStyled 
                   label="Senha"
                   variant="outlined"                
                   type="password"
@@ -68,13 +50,7 @@ function RegisterFormPage() {
                   value={form.password}
                   onChange={handleInputChange}
               />
-              <Button
-                  variant="contained"
-                  color="primary"
-                  type="submit"
-              >
-                  Cadastrar
-              </Button>
+              < ButtonEffect> Cadastrar </ ButtonEffect>
           </FormContainer>
       </SignupPageContainer>
   )

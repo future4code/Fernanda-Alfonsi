@@ -1,46 +1,17 @@
 import React from 'react'
-// import { useHistory } from 'react-router-dom'
-import { useRequestData} from '../hooks/useRequestData';
-import { useProtectedPage} from '../hooks/useProtectedPage'
-import PostCard from "../components/PostCard"
-import NavBar from "../components/NavBar"
-import {TextField} from '@material-ui/core'
-import {useForm} from "../hooks/useForm"
-import {createPost} from "../services/posts"
-import styled from "styled-components"
+import { useRequestData} from '../../hooks/useRequestData';
+import { useProtectedPage} from '../../hooks/useProtectedPage'
+import PostCard from "../../components/PostCard"
+import {useForm} from "../../hooks/useForm"
+import {createPost} from "../../services/posts"
+import {FeedContainer,CreatePostContainer,FormContainer,TextFieldStyled,ButtonEffect} from './styled'
 
-const FeedContainer = styled.div`
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    width:100vw;
-`
-const FormContainer = styled.form`
-    display: flex;
-    justify-content: space-around;
-    margin:0px 10px;
-    /* align-items: center; */
-`
-const CreatePostContainer = styled.div`
-    margin-top:20px;
-    
-    button{
-      height:50px;
-      margin-right:40px;
-      border-radius:20%;
-      background-color:#1f4863;
-      color:white;
-      border:none;
-    }
-`
-const TextFieldStyled  = styled(TextField)`
-    background-color:white;
-    
-`
+
+
 function FeedPage() {
 
   useProtectedPage()
-  // const history = useHistory()
+ 
   const {form, onChange,resetForm} = useForm({title: "", text: ""})
 
   const handleInputChange = (event) => {
@@ -58,29 +29,28 @@ function FeedPage() {
   console.log(getPost)
   return (
     <div>
-        <NavBar/>
+        
         <FeedContainer>
           <CreatePostContainer>
-            <h4>Aqui você cria seu post</h4>
               <FormContainer 
               onSubmit={handleSubmission} 
               >
                       <TextFieldStyled
-                          label="Título"
+                          label="Título do post"
                           variant="outlined"
                           name="title"
                           value={form.title}
                           onChange={handleInputChange}
                       />
                       <TextFieldStyled 
-                          label="Texto do Post"
+                          label="Texto do seu post"
                           variant="outlined"                
                           name="text"
                           value={form.text}
                           onChange={handleInputChange}
                       />
 
-                      <button>Criar post</button>
+                      <ButtonEffect>Criar post</ButtonEffect>
               </FormContainer>      
           </CreatePostContainer>
 

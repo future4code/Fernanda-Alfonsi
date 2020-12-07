@@ -1,8 +1,8 @@
 import React from "react"
 import styled from "styled-components"
-import fogueteDown from "../img/fogueteDown.png"
-import fogueteUp from "../img/fogueteUp.png"
+import InteractiveCard from "../components/InteractiveCard"
 import {voteComments} from "../services/votes"
+
 
 const CardContainer = styled.div`
     display:flex;
@@ -16,6 +16,9 @@ const CardName = styled.div`
     display:flex;
     flex-direction:column;
     border-radius: 10px;
+    h5{
+        color:#1f4863;
+    }
 `
 const CardText = styled.div`
     display:flex;
@@ -23,13 +26,7 @@ const CardText = styled.div`
 
 `
 
-const CardButtons = styled.div`
-    display:flex;
-    img{
-        width:40px;
-        height:35px;
-    }
-`
+
 
 
 const CommentCard = (props) => {
@@ -46,17 +43,18 @@ const CommentCard = (props) => {
     
         <CardContainer>
             <CardName>
-                <h3>{props.name}</h3>
+                <h5>{props.name}</h5>
             </CardName>
             <CardText>
                 
                 <p>{props.text}</p>
             </CardText>
-            <CardButtons>
-               <img src={fogueteUp} onClick={()=>handleVote(1)} />
-                <p>{props.count}</p>
-                <img src={fogueteDown} onClick={()=>handleVote(-1)}/>
-            </CardButtons>
+            <InteractiveCard
+                    voteDirection={props.direction}
+                    voteCount={props.count}
+                    handleVote={handleVote}
+                />
+            
         </CardContainer>
     );
 }
