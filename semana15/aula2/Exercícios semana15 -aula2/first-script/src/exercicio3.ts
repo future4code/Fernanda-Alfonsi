@@ -29,9 +29,9 @@ const posts: post[] = [
   ]
 
 //   Parte B
-// as entradas 
+// As entradas  desta função são: posts e autorInformado. As saídas são:  posts.filter no ruturn da função e  post.autor do return do filter.
 
-function buscarPostsPorAutor(posts, autorInformado) {
+function buscarPostsPorAutor(posts:post[], autorInformado:string) {
     return posts.filter(
       (post) => {
         return post.autor === autorInformado
@@ -39,4 +39,3 @@ function buscarPostsPorAutor(posts, autorInformado) {
     )
   }
 
-//   Quais são as entradas e saídas dessa função? Copie a função para o mesmo arquivo .ts do array de posts e faça a tipagem necessária. 
