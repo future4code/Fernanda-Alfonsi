@@ -53,15 +53,20 @@ app.get("/countries/search", (req: Request, res: Response) => {
     }
  })
 
-app.put("countries/edit/:id", (req:Request, res: Response)=>{
+app.put("/countries/edit/:id", (req:Request, res: Response)=>{
     
     const index = countries.findIndex(
         country => country.id === Number(req.params.id)
      )
 
-     countries[index].name = req.body.name
-     countries[index].capital=req.body.capital
-     res.status(200).send("Pais alterado com sucesso")
+     countries[index].name = req.body.name;
+     countries[index].capital=req.body.capital;
+     if(index){
+      res.status(200).send({message:"Pais alterado com sucesso", country:req.body})
+     }else{
+      res.status(404).send("Não encontrado")
+     }
+    
 
 });
 
