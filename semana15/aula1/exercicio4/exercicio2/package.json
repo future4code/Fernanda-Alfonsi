@@ -1,0 +1,16 @@
+{
+  "name": "exercicio2",
+  "version": "1.0.0",
+  "description": "exercicio 2 semana 15",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Node",
+    "exercicio4"
+  ],
+  "author": "Fernanda Alfonsi",
+  "license": "ISC"
+}
