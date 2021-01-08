@@ -72,7 +72,7 @@ let users: user[] = [
 //a-Qual método HTTP você deve utilizar para isso? 
 // Resposta: O metodo é o GET.
 // b-Como você indicaria a entidade que está sendo manipulada? 
-// Resposta: A entidade seria o user, sendo indicada pela sintaxe "/user" indicada no parâmetro na URL
+// Resposta: A entidade seria o user, sendo indicada pela sintaxe "/user" usada na URL
 
 
 
@@ -84,13 +84,13 @@ app.get("/user", (req:Request, res:Response)=>{
 // Exercício 2
 // a. Como você passou os parâmetros de type para a requisição? Por quê?
 
-// Resposta: Passei os parâmetros usando o query params pois é melhor em caso de buscas dentro de um mesmo conjunto de dados.   
+// Resposta: Passei os parâmetros usando o query params pois é a melhor opção para uma busca de um ou mais parametros a serem filtrados.
 
 // b. Você consegue pensar em um jeito de garantir que apenas `types` válidos sejam utilizados?
-// Resposta: Usando uma estrutura de if para tratar os erros  conseguimos 
+// Resposta: Usando  o enum para tipar a dado "type" delimitamos as escolhas depois é só fazer uma condição de if que  exclua das respostas válidas tudo o que não estiver no enum. 
 
 
-app.get("/user", (req: Request, res: Response) => {
+app.get("/user/type", (req: Request, res: Response) => {
     let errorCode: number = 400;
     try {
         const type:string = (req.query.type as string).toUpperCase();
@@ -116,11 +116,11 @@ app.get("/user", (req: Request, res: Response) => {
 })
 
 // Exercício 3
-//a.Qual é o tipo de envio de parâmetro que costuma ser utilizado por aqui? Resposta:
+//a.Qual é o tipo de envio de parâmetro que costuma ser utilizado por aqui? Resposta: neste exercício usamos o query também
 
-//b.Altere este endpoint para que ele devolva uma mensagem de erro caso nenhum usuário tenha sido encontrado.Resposta:
+//b.Altere este endpoint para que ele devolva uma mensagem de erro caso nenhum usuário tenha sido encontrado.
 
-app.get("/user", (req: Request, res: Response) => {
+app.get("/user/name", (req: Request, res: Response) => {
     let errorCode: number = 400;
     try {
         const nome: string = req.query.nome as string;
@@ -146,9 +146,9 @@ app.get("/user", (req: Request, res: Response) => {
 });
 
 // Exercício 4
-//a.Mude o método do endpoint para PUT. O que mudou? Resposta:
+//a.Mude o método do endpoint para PUT. O que mudou? Resposta: Aparentemente se o usuário já existe ele é alterado e se não existe ele cria um usuário.
 
-//b.Você considera o método PUT apropriado para esta transação? Por quê?.Resposta:
+//b.Você considera o método PUT apropriado para esta transação? Por quê?.Resposta: Acho que a criação do usuário foi realizada, sendo assim , atingiu seu objetivo, logo, acho que é apropriado sim. 
 
 app.post("/user", (req: Request, res: Response)=>{
 
@@ -178,6 +178,73 @@ app.post("/user", (req: Request, res: Response)=>{
     }
 
 });
+
+// Exercício 5
+app.put("/user", (req:Request, res: Response)=>{
+    let errorCode: number = 400;
+    try{
+        const lastUser: number = Number (users.length -1)
+        const name: string = req.body.name
+
+        users[lastUser].name = `${name} - Alterado!`
+        res.status(200).send({message: "Usuário atualizado com sucesso!"});
+
+    }catch(error){
+        res.status(errorCode).send({message:error.message})
+    }
+});
+
+// Exercício 6
+
+app.patch("/user", (req:Request, res: Response)=>{
+    let errorCode: number = 400;
+    try{
+        const lastUser: number = Number (users.length -1)
+        const name: string = req.body.name
+
+        users[lastUser].name = `${name} - Alterado Novamente!`
+        res.status(200).send({message: "Usuário atualizado com sucesso!"});
+
+    }catch(error){
+        res.status(errorCode).send({message:error.message})
+    }
+});
+
+
+// Exercício 7
+
+app.delete("/user/:id", (req:Request, res:Response)=>{
+    let errorCode: number = 400;
+
+    try {
+        const id: string = req.params.id as string;
+
+
+
+        if(isNaN(Number(id))) {
+            errorCode = 422;
+            throw new Error("Id inválido");
+        }
+
+        const myUserIndex = users.findIndex(((u: user) => u.id === Number(id)));
+
+       
+
+        if (myUserIndex===-1) {
+            errorCode = 404;
+            throw new Error("Usuário não encontrado");
+        }
+
+        users.splice(myUserIndex, 1);
+
+        res.status(200).send({message: "Usuário deletado com sucesso!"});
+
+    } catch (error) {
+        res.status(errorCode).send(error.message);
+    }
+
+});
+
 
 const server = app.listen(process.env.PORT || 3003, () => {
     if (server) {
