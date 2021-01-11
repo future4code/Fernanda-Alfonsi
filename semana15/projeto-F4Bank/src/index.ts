@@ -105,18 +105,20 @@ app.put("/users", (req: Request, res: Response)=>{
            saldo: Number(req.body.saldo),
          }
 
-    //    if(!nome|| !cpf){
-    //        errorCode = 422;
-    //        throw new Error("Nome ou CPF inválidos. Preencha corretamente.");
-    //    }
+      
+    //    if(!nome || !cpf){
+    //     errorCode = 422;
+    //     throw new Error("Nome ou CPF inválidos. Preencha corretamente.");
+    // }
 
+   
 
-       const myUserIndex = cadastro.findIndex(((u: conta) => (u.CPF||u.nome) === cpf||nome));
-    //    const myUserNameIndex = cadastro.findIndex(((u: conta) => u.nome=== nome));
+       const myUserIndex = cadastro.findIndex(((u: conta) => ( u.nome === nome) || (u.CPF=== cpf)));
+    
 
        if (myUserIndex  === -1) {
            errorCode = 404;
-           throw new Error("Usuário não encontrado");
+           throw new Error("Cliente não encontrado");
        }
 
        cadastro[myUserIndex].saldo = reqBody.saldo;
