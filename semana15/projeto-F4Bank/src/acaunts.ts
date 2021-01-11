@@ -1,21 +1,14 @@
-export enum CONTINENTS {
-    AFRICA = "África",
-    AMERICA = "América",
-    ASIA = "Ásia",
-    EUROPE = "Europa",
-    OCEANIA = "Oceania"
- }
- 
+
  export type conta = {
     nome:string, 
-    cpf: number, 
-    dataDeNascimento: number,
+    CPF: string, 
+    dataDeNascimento:Date|string,
     saldo:number,
     extratoDoUsuario:extract[]
  }
  export type extract= {
     valor:number,
-    data:number,
+    data:Date|string,
     descricao: string
  }
     
@@ -27,106 +20,107 @@ export enum CONTINENTS {
  export const cadastro: conta[] = [
     {
         "nome":"Fernanda", 
-        "cpf": 9876543210, 
-        "dataDeNascimento": 30011984,
-        "saldo":34,
+        "CPF": "987.654.321-0", 
+        "dataDeNascimento": "1984-01-30",
+        "saldo":100,
         "extratoDoUsuario":[
             {
                 valor:0,
-                data:8012021,
+                data:"2021-01-08T00:00:00.000Z",
                 descricao:"conta de luz"
             }
         ]
     },
     {
         "nome":"Eduardo", 
-        "cpf": 9876543211, 
-        "dataDeNascimento": 5121985,
-        "saldo":34,
+        "CPF": "987.654.321-1", 
+        "dataDeNascimento": "05/12/1985",
+        "saldo":200,
         "extratoDoUsuario":[
             {
                 valor:0,
-                data:8012021,
+                data:"2021-01-08T00:00:00.000Z",
                 descricao:"conta de luz"
             }
         ]
     },
     {
         "nome":"Leandro", 
-        "cpf": 9876543212, 
-        "dataDeNascimento": 19041988,
-        "saldo":34,
+        "CPF": "987.654.321-2", 
+        "dataDeNascimento": "19/04/1988",
+        "saldo":300,
         "extratoDoUsuario":[
             {
                 valor:0,
-                data:8012021,
+                data:"2021-01-08T00:00:00.000Z",
                 descricao:"conta de luz"
             }
         ]
     },
     {
         "nome":"Luiz", 
-        "cpf": 9876543213, 
-        "dataDeNascimento": 11121988,
-        "saldo":34,
+        "CPF": "987.654.321-3", 
+        "dataDeNascimento": "11/12/1988",
+        "saldo":400,
         "extratoDoUsuario":[
             {
                 valor:0,
-                data:8012021,
+                data:"2021-01-08T00:00:00.000Z",
                 descricao:"conta de luz"
             }
         ]
     },
     {
         "nome":"Marina", 
-        "cpf": 9876543214, 
-        "dataDeNascimento": 24041990,
-        "saldo":34,
+        "CPF": "987.654.321-4", 
+        "dataDeNascimento": "24/04/1990",
+        "saldo":500,
         "extratoDoUsuario":[
             {
                 valor:0,
-                data:8012021,
+                data:"2021-01-08T00:00:00.000Z",
                 descricao:"conta de luz"
             }
         ]
     },
     {
         "nome":"Diana", 
-        "cpf": 9876543215, 
-        "dataDeNascimento": 30041988,
-        "saldo":34,
+        "CPF": "987.654.321-5", 
+        "dataDeNascimento": "30/04/1988",
+        "saldo":600,
         "extratoDoUsuario":[
             {
                 valor:0,
-                data:8012021,
+                data:"2021-01-08T00:00:00.000Z",
                 descricao:"conta de luz"
             }
         ]
     },
     {
         "nome":"Wesley", 
-        "cpf": 9876543216, 
-        "dataDeNascimento": 2111993,
-        "saldo":34,
+        "CPF": "987.654.321-6", 
+        "dataDeNascimento": "02/11/1993",
+        "saldo":700,
         "extratoDoUsuario":[
             {
                 valor:0,
-                data:8012021,
+                data:"2021-01-08T00:00:00.000Z",
                 descricao:"conta de luz"
             }
         ]
     },
     {
         "nome":"Augusto", 
-        "cpf": 9876543217, 
-        "dataDeNascimento": 30011985,
-        "saldo":34,
+        "CPF": "987.654.321-7", 
+        "dataDeNascimento": "30/01/1985",
+        "saldo":800,
         "extratoDoUsuario":[
             {
                 valor:0,
-                data:8012021,
+                data:"2021-01-08T00:00:00.000Z",
                 descricao:"conta de luz"
             }
         ]
     },
+    
 ]
