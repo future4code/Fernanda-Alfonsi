@@ -73,3 +73,54 @@ Resposta: quando tentamos apagar uma linha pai que já está atrelada a outra ta
 DELETE FROM Actor WHERE id="003";
 ```
 ### Exercício 3
+
+a)Resposta: A Query retorna uma junção das tabelas Movie e Rating, pelos dados que possuem correspondencia nas duas tabelas.O operador ON serve para organizar a tabela criada para que os dados não venham repetidos, apenas as linhas relacionadas. 
+
+b)  
+```sql
+SELECT Movie.title, Movie.id, Rating.rate FROM Movie 
+INNER JOIN Rating 
+ON Movie.id = Rating.movie_id;
+```
+
+### Exercício 4
+
+a) Escreva uma query que retorne todos os filmes e suas avaliações (com essa avaliação existindo ou não). A sua query deve retornar somente o nome, id, nota do filme e comentário*
+```sql
+SELECT Movie.title, Movie.id, Rating.rate, Rating.comment FROM Movie 
+LEFT JOIN Rating 
+ON Movie.id = Rating.movie_id;
+```
+b)
+```sql
+SELECT Movie.id as Id_movies, Movie.title, MovieCast.actor_id FROM MovieCast
+left JOIN Movie  ON MovieCast.movie_id = Movie.id;
+```
+c)
+```sql
+SELECT AVG (Rating.rate) as average, Movie.title, Movie.id FROM Movie
+left JOIN Rating  
+ON  Movie.id = Rating.movie_id 
+GROUP BY (Movie.id);
+```
+
+### Exercício 5
+a) 
+Esta query junta três tabelas dando foco na tabela de filmes, o que quer dizer que todo filme aparecerá se tiver um ator atrelado a ele na tabela MovieCast, porém, nem todo ator itá aparecer se não tiver atrelado à MovieCast.
+Usamos dois JOINS pois temos que atrelar duas tabelas por JOIN, como temos 3 Tabelas e uma é a que atrela os ids da Tabela de Movies e Actor, temos que usar dois JOINS.
+
+
+b)
+```sql
+SELECT m.id as movie_id, m.title, a.id as actor_id, a.name 
+FROM Movie m
+JOIN MovieCast mc 
+ON m.id = mc.movie_id
+RIGHT JOIN Actor a 
+ON a.id = mc.actor_id;
+```
+c) -  A query  não rodou como deveria, pois no campo de busca do Select ao invés de estar m.title, estám,title, o que faz o sql interpretar m como uma coluna da tabela. 
+
+
+
+*d. **Desafio:** Faça uma query que retorne todos os filmes com o nome de seus atores e as suas avaliações (nota e comentário)*
