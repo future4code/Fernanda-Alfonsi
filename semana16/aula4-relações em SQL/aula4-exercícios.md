@@ -123,4 +123,27 @@ c) -  A query  não rodou como deveria, pois no campo de busca do Select ao inv�
 
 
 
-*d. **Desafio:** Faça uma query que retorne todos os filmes com o nome de seus atores e as suas avaliações (nota e comentário)*
+d)
+```sql
+SELECT 
+	Movie.id as Movie_id,
+    Movie.title, 
+    Actor.id as actor_id, 
+    Actor.name, 
+    Rating.rate, 
+    Rating.comment 
+FROM Movie 
+LEFT JOIN Rating  on Rating.movie_id = Movie.id
+LEFT JOIN MovieCast  ON Movie.id = MovieCast.movie_id
+JOIN Actor  ON Actor.id = MovieCast.actor_id;
+```
+
+### Exercício 6
+
+a) é uma relação M:N porque um filme pode receber mais de um orcar e um Oscar pode ser dado para mais de um filme (em anos dierentes).
+
+*b. Explicite a query que você usou para criar a tabela*
+
+*c. Crie ao menos 2 óscar para cada um dos filmes* 
+
+*d. Faça uma query que retorne todos os filmes e seus respectivos óscar*
