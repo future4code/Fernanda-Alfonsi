@@ -1,3 +1,7 @@
 export type searchUser = {
-   name: string,
+   name?: string,
+   type?:string,
+   orderBy?:string,
+   orderType?:string,
+   page?:string
 }
