@@ -20,4 +20,10 @@ CREATE TABLE User (
 
 exercício 3
 a)  O que a linha as string faz? Por que precisamos usar ela ali?
-resp: A linha as string garante que chegará algo ali e que esta informação será do tipo string necessariamente. 
+resp: A linha "as string" garante que chegará algo do process.env.JWT_KEY e que esta informação será do tipo string necessariamente. 
+
+
+exercício 7
+a)O que a linha as any faz? Por que precisamos usá-la ali?
+resp: A linha "as any" garante que chegará algo do "jwt.verify" e que esta informação poderá ser qualquer uma!
+

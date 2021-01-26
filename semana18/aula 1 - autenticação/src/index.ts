@@ -2,8 +2,9 @@ import knex from "knex";
 import express from "express";
 import dotenv from "dotenv";
 import { AddressInfo } from "net";
-import { Console } from "console";
-import{idGenerate} from "./services/idGenerated"
+import createUser from "./endpoints/createUser";
+import getUserByEmail from "./endpoints/getUserByEmail";
+import getUserById from "./endpoints/getUserById";
 
 dotenv.config();
 export const connection = knex({
@@ -22,7 +23,12 @@ const app = express();
 app.use(express.json());
 
 
-console.log("Generated Id: ",idGenerate());
+
+app.post('/user/signup', createUser)
+
+app.post('/user/login', getUserByEmail)
+
+app.get('/user/profile', getUserById)
 
 
 const server = app.listen(process.env.PORT || 3000, () => {
