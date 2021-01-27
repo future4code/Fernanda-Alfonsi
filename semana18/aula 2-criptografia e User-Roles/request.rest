@@ -1,0 +1,29 @@
+### Cria usuário e mostra token como resposta
+
+POST http://localhost:3000/user/signup
+Content-Type:  application/json
+
+
+{
+	"email": "panificadoraalpha@gmail.com",
+	"password": "chegamantegaderrete"
+}
+
+### verifica login e  mostra token como resposta
+
+POST http://localhost:3000/user/login
+Content-Type:  application/json
+
+
+{
+	"email": "panificadoraalpha@gmail.com",
+	"password": "chegamantegaderrete"
+}
+
+
+### retorna as informações do usuário logado
+
+GET http://localhost:3000/user/profile
+Content-Type:  application/json
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImMxOTQ4ZDkwLWRlYjYtNDY0Ny1hYmYxLTRiYjQzYThjNjA2YSIsImlhdCI6MTYxMTc3MjQzMywiZXhwIjoxNjExNzcyNDkzfQ.hU_ghm8fCebB4wvteI95jYCj1seHSvD2RRr-xHhtYa4
+
