@@ -8,6 +8,6 @@ export async function selectUserByEmail(email: string):Promise<any> {
     WHERE email='${email}';
     `)
 
-    return result[0]
+    return result[0][0]
    
 }

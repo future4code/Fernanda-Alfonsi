@@ -8,6 +8,6 @@ export async function selectUserById(id: string):Promise<any> {
     WHERE id='${id}';
     `)
 
-    return result[0]
+    return result[0][0]
    
 }

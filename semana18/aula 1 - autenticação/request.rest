@@ -25,5 +25,5 @@ Content-Type:  application/json
 
 GET http://localhost:3000/user/profile
 Content-Type:  application/json
-authorization: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MTE2MjgzMzAsImV4cCI6MTYxMTYyODM5MH0.Rh3VeOFpLejjobhfJ24afTeTQlnvpNU_81pZ1XxdPGE'
-}
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImMxOTQ4ZDkwLWRlYjYtNDY0Ny1hYmYxLTRiYjQzYThjNjA2YSIsImlhdCI6MTYxMTc3MjQzMywiZXhwIjoxNjExNzcyNDkzfQ.hU_ghm8fCebB4wvteI95jYCj1seHSvD2RRr-xHhtYa4
+

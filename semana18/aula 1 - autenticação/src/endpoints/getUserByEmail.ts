@@ -17,7 +17,7 @@ export default async function getUserByEmail(req: Request, res: Response){
 
      
 
-      if ( user[0].password !== password) {
+      if ( user.password !== password) {
         throw new Error("Senha inválida, tente novamenteee");
       }
 
