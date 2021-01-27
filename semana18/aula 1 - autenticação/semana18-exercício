@@ -1,0 +1,29 @@
+exercício 1 
+
+*a. Qual a sua opinião em relação a usar strings para representar os ids? Você concorda que seja melhor do que usar números?*
+
+resp: Sim, pois usando strings não ficamos limitados apenas a números, aumentando significativamente a quantidade de variações que podemos criar, além de podermos usar uma quantidade de caracteres muito grande.
+
+exercício 2
+
+*a. Explique o código acima com as suas palavras.*
+
+resp: Usando a função connection com o knex, nos conectamos com o banco de dados, depois criamos uma variavel userTableName que retresentará a tabela "User" logo depois criamos uma função assincrona que irá criar um novo usuário na talela userTableName que conterá id, email, e password, ambos tipados como string.  
+
+b)
+CREATE TABLE User (
+	id VARCHAR(255) PRIMARY KEY,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL
+);
+
+
+exercício 3
+a)  O que a linha as string faz? Por que precisamos usar ela ali?
+resp: A linha "as string" garante que chegará algo do process.env.JWT_KEY e que esta informação será do tipo string necessariamente. 
+
+
+exercício 7
+a)O que a linha as any faz? Por que precisamos usá-la ali?
+resp: A linha "as any" garante que chegará algo do "jwt.verify" e que esta informação poderá ser qualquer uma!
+
