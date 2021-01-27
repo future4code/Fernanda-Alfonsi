@@ -1,0 +1,20 @@
+http://localhost:3003/users/all
+
+###  E1-A - GET USER BY NAME
+
+http://localhost:3003/users/search?name=so
+
+### E1-B - GET USER BY TYPE
+
+http://localhost:3003/users/search/Teacher
+
+### E2 - GET ORDER USER
+
+http://localhost:3003/users/order?orderBy=name
+
+### E3 - GET LIMIT USER
+
+http://localhost:3003/users/all/limit
+
+### E4 - GET All FUNCTIONS
+http://localhost:3003/users/all/search?name=a&&type=CX
