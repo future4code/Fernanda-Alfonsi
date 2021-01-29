@@ -1,0 +1,24 @@
+###signup
+POST http://localhost:3003/user/signup
+Content-Type: application/json
+
+{
+    "name":"Larica Vegana",
+    "email":"govegan@gmail.com",
+    "password":"comidasemcrueldade"
+}
+
+###login
+POST http://localhost:3003/user/login
+Content-Type: application/json
+
+{
+    "email":"govegan@gmail.com",
+    "password":"comidasemcrueldade"
+}
+
+###getprofile
+
+GET http://localhost:3003/user/profile
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ4N2NlZDQ2LWQxZGMtNDhhNi04NDIxLWE1ODY2NGRhNjZjNCIsImlhdCI6MTYxMTk0NjEzNSwiZXhwIjoxNjExOTQ3MzM1fQ.LjWO6KMovIdEUFXGRHeXfHJeNZbxw10zLmfT7qvVv9U
