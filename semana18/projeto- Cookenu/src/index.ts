@@ -7,6 +7,9 @@ import {signup} from "./endpoints/signup"
 import {login} from "./endpoints/login"
 import {getProfile} from "./endpoints/profile"
 import {createRecipe} from "./endpoints/recipes"
+import { getUserById } from "./endpoints/getUserById"
+import { getRecipeById } from "./endpoints/getRecipeById";
+
 const app:Express = express();
 
 app.use(express.json());
@@ -31,7 +34,11 @@ app.post('/user/login', login)
 
 app.get('/user/profile', getProfile)
 
-app.post('/recipes/creation', createRecipe)
+app.post('/recipe/creation', createRecipe)
+
+app.get('/user/:id', getUserById)
+
+app.get('/recipe/:id', getRecipeById)
 
 const server = app.listen(process.env.PORT || 3003, () =>{
     if(server){

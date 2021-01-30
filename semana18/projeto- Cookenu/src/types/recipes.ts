@@ -4,5 +4,5 @@
     title: string,
     preparation: string,
     creation_date:string,
-    cook_user_id: string
+    cook_user_id: any
  }

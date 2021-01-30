@@ -22,3 +22,29 @@ Content-Type: application/json
 GET http://localhost:3003/user/profile
 Content-Type: application/json
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ4N2NlZDQ2LWQxZGMtNDhhNi04NDIxLWE1ODY2NGRhNjZjNCIsImlhdCI6MTYxMTk0NjEzNSwiZXhwIjoxNjExOTQ3MzM1fQ.LjWO6KMovIdEUFXGRHeXfHJeNZbxw10zLmfT7qvVv9U
+
+###Create Recipe
+
+POST http://localhost:3003/recipe/creation
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ4N2NlZDQ2LWQxZGMtNDhhNi04NDIxLWE1ODY2NGRhNjZjNCIsImlhdCI6MTYxMTk1NDQ2OCwiZXhwIjoxNjExOTU1NjY4fQ.MKG90R2sC0bTPc_QD6mhc7pmcVkeLFsVPtdtR4PyN7c
+
+{
+    "title": "Falafel",
+    "preparation": "No processador, coloque a cebola, o alho, a salsinha  e o coentro. Processe por 1 minuto, para triturar bem. Junte o grão de bico, o sal e as especiarias e bata bem por 5 minutos, até formar uma pasta, frite e disfrute!.",
+    "creation_date":"29-01-2021"
+}
+
+
+###get other profile
+
+GET http://localhost:3003/user/56a4f466-e509-40a1-b934-da58100548d4
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ4N2NlZDQ2LWQxZGMtNDhhNi04NDIxLWE1ODY2NGRhNjZjNCIsImlhdCI6MTYxMTk1NjQyNSwiZXhwIjoxNjExOTU3NjI1fQ.D5dxspzLS2VTnZni8khYpJrUvLhb7CbbJVT0LK_-EVY
+
+
+###get Recipe
+
+GET http://localhost:3003/recipe/9e05c946-36b6-4e63-8a88-7f6ce70bff1b
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ4N2NlZDQ2LWQxZGMtNDhhNi04NDIxLWE1ODY2NGRhNjZjNCIsImlhdCI6MTYxMTk1NzQwNCwiZXhwIjoxNjExOTU4NjA0fQ.x0NTxxK4TAImhZvFBSjQB8tMCO7VNpdpZJcNrZDKlBc
