@@ -1,0 +1,50 @@
+###signup
+POST http://localhost:3003/user/signup
+Content-Type: application/json
+
+{
+    "name":"Larica Vegana",
+    "email":"govegan@gmail.com",
+    "password":"comidasemcrueldade"
+}
+
+###login
+POST http://localhost:3003/user/login
+Content-Type: application/json
+
+{
+    "email":"govegan@gmail.com",
+    "password":"comidasemcrueldade"
+}
+
+###getprofile
+
+GET http://localhost:3003/user/profile
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ4N2NlZDQ2LWQxZGMtNDhhNi04NDIxLWE1ODY2NGRhNjZjNCIsImlhdCI6MTYxMjE4NzYwNiwiZXhwIjoxNjEyMTg4ODA2fQ.UTDYD8wlTef6fbWW2yWCOkURYt_D4WmF_XinoapBeys
+
+###Create Recipe
+
+POST http://localhost:3003/recipe/creation
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ4N2NlZDQ2LWQxZGMtNDhhNi04NDIxLWE1ODY2NGRhNjZjNCIsImlhdCI6MTYxMjE4NzYwNiwiZXhwIjoxNjEyMTg4ODA2fQ.UTDYD8wlTef6fbWW2yWCOkURYt_D4WmF_XinoapBeys
+
+{
+    "title": "Moqueca de palmito",
+    "preparation": " Refogue a cebola picada com o azeite de oliva em uma panela grande.Adicione aos poucos as tiras de pimentão, deixe refogar em fogo médio por 2 ou 3 minutos.A seguir adicione o palmito em rodelas grandes formando uma camada.Vá adicionando aos poucos o azeite de dendê e a pimenta a gosto.Depois coloque os 400 ml de leite de coco e misture em fogo baixo.Coloque o tomate agora, pois ele ficará durinho e não derreterá.Adicione sal a gosto e deixe cozinhar por 5 a 7 minutos em fogo médio/baixo, mexendo de vez em quando para não grudar na panela.Após apagar o fogo adicione o coentro picado, assim ele mantém sua textura, cor e aroma.Sirva com arroz.",
+    "creation_date":"01-02-2021"
+}
+
+
+###get other profile
+
+GET http://localhost:3003/user/56a4f466-e509-40a1-b934-da58100548d4
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ4N2NlZDQ2LWQxZGMtNDhhNi04NDIxLWE1ODY2NGRhNjZjNCIsImlhdCI6MTYxMjE4NzYwNiwiZXhwIjoxNjEyMTg4ODA2fQ.UTDYD8wlTef6fbWW2yWCOkURYt_D4WmF_XinoapBeys
+
+
+###get Recipe
+
+GET http://localhost:3003/recipe/29a555a3-743d-49df-924b-5a834d773e8d
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ4N2NlZDQ2LWQxZGMtNDhhNi04NDIxLWE1ODY2NGRhNjZjNCIsImlhdCI6MTYxMjE4NzYwNiwiZXhwIjoxNjEyMTg4ODA2fQ.UTDYD8wlTef6fbWW2yWCOkURYt_D4WmF_XinoapBeys
