@@ -1,13 +1,10 @@
 import express, {Express} from "express"
 import cors from "cors"
 import {AddressInfo} from "net"
+import {signup, login, getAllUsers, deleteUserById} from "./controller/userController"
 
-import {signup} from "./endpoints/signup"
-import {login} from "./endpoints/login"
-import {getProfile} from "./endpoints/profile"
-import {createRecipe} from "./endpoints/recipes"
-import { getUserById } from "./endpoints/getUserById"
-import { getRecipeById } from "./endpoints/getRecipeById";
+
+
 
 const app:Express = express();
 
@@ -16,17 +13,17 @@ app.use(cors());
 
 
 
-app.put('/signup', signup)
+app.put('/user/signup', signup)
 
 app.post('/user/login', login)
 
-app.get('/user/profile', getProfile)
+app.get('/user/all', getAllUsers)
 
-app.post('/recipe/creation', createRecipe)
+app.delete('/user/delete/:id', deleteUserById)
 
-app.get('/user/:id', getUserById)
+// app.get('/user/:id', getUserById)
 
-app.get('/recipe/:id', getRecipeById)
+// app.get('/recipe/:id', getRecipeById)
 
 const server = app.listen(process.env.PORT || 3003, () =>{
     if(server){
