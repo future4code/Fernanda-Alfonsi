@@ -1,0 +1,23 @@
+### signup
+POST http://localhost:3003/user/signup
+Content-Type: application/json
+
+{
+   "name": "joão",
+   "email": "joão@gmail.com",
+   "password": "12345678"
+}
+
+###login
+POST http://localhost:3003/user/login
+Content-Type: application/json
+
+{
+  
+   "email": "carina@gmail.com",
+   "password": "12345678"
+}
+
+###Create post
+
+###Get Post By Id
