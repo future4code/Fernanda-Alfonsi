@@ -1,0 +1,35 @@
+###signup
+PUT http://localhost:3003/user/signup
+Content-Type: application/json
+
+{
+    "name":"Dwight Schrute",
+    "email":"dwight@dundermifflin.com",
+    "password":"loveme",
+    "role": "NORMAL"
+}
+
+###login
+POST http://localhost:3003/user/login
+Content-Type: application/json
+
+{
+    "email":"michael@dundermifflin.com",
+    "password":"theboss"
+}
+
+###getallUser
+
+GET http://localhost:3003/user/all
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjE1NDBkMmNjLTM0MGItNDE2Ny1iZWFmLTNjZmE5YTBkZDIwYyIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTYxMjIzODc2MCwiZXhwIjoxNjEyMjM5OTYwfQ._eiFR3sv6hJThpDY1BkovFLtPq3pVl7eEpWapAbMpYM
+
+
+
+###deleteUser
+
+DELETE  http://localhost:3003/user/delete/9d58c9c4-af4a-4f25-9cc0-b8e4debae3b1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjE1NDBkMmNjLTM0MGItNDE2Ny1iZWFmLTNjZmE5YTBkZDIwYyIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTYxMjIzODc2MCwiZXhwIjoxNjEyMjM5OTYwfQ._eiFR3sv6hJThpDY1BkovFLtPq3pVl7eEpWapAbMpYM
+
+
