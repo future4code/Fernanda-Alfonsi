@@ -1,5 +1,8 @@
 import { Request, Response } from "express";
 import userBusiness from "../business/UserBusiness";
+import { User, UserRole } from "../model/User";
+import tokenGenerator from "../services/tokenGenerator";
+
 
 export class UserController {
 
@@ -40,6 +43,38 @@ export class UserController {
          res.status(statusCode || 400).send({ message });
       }
    }
+
+   public async getAllUsers(req: Request, res: Response) {
+      try {
+
+         const token = req.headers.authorization as any
+   
+         const payload = tokenGenerator.verify(token)
+        
+         const result = await userBusiness.getAllUsers(payload.role);
+         res.status(200).send(result);
+      } catch (error) {
+         const { statusCode, message } = error
+         res.status(statusCode || 400).send({ message });
+      }
+   }
+
+
+   public async getMyProfile(req: Request, res: Response) {
+      try {
+
+         const token = req.headers.authorization as any
+   
+         const payload = tokenGenerator.verify(token)
+        
+         const result = await userBusiness.getMyProfile(payload.id);
+         res.status(200).send(result);
+      } catch (error) {
+         const { statusCode, message } = error
+         res.status(statusCode || 400).send({ message });
+      }
+   }
 }
 
 export default new UserController()
+

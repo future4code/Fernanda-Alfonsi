@@ -2,24 +2,27 @@ import {UserBusiness} from "../src/business/UserBusiness"
 import {TokenGenerator} from "../src/services/tokenGenerator"
 import {HashGenerator} from "../src/services/hashGenerator"
 import {IdGenerator} from "../src/services/idGenerator"
+import {User, UserRole, stringToUserRole} from "../src/model/User"
+
 
 describe("Testing UserBusiness.getUserById", () => {
-    let userDatabase = {getUserById:jest.fn(async(id:string)=>undefined)}as any;
-    let hashGenerator = {hash:jest.fn(),compareHash:jest.fn()} as HashGenerator;
-    let tokenGenerator = {generate:jest.fn(()=>"token"), verify:jest.fn()} as TokenGenerator;
-    let idGenerator = {generate:jest.fn(()=> "bananinha")} as IdGenerator
-    test("Should return 'User not found' when user does not exist", async () => {
-      expect.assertions(2);
-      try {
+    const userDatabase = {getUserById:jest.fn(async(id:string)=>undefined)}as any;
+    const hashGenerator = {hash:jest.fn(),compareHash:jest.fn()} as HashGenerator;
+    const tokenGenerator = {generate:jest.fn(()=>"token"), verify:jest.fn()} as TokenGenerator;
+    const idGenerator = {generate:jest.fn(()=> "bananinha")} as IdGenerator
 
-        const getUserById = jest.fn();
-        userDatabase = { getUserById };
-  
-        const userBusiness = new UserBusiness(
-          userDatabase,
-          hashGenerator as any,
-          tokenGenerator as any,
-          idGenerator as any
+
+    test("Should return 'User not found' when user does not exist", async () => {
+
+      expect.assertions(2);
+
+      try {
+         
+        const userBusiness = new UserBusiness(   
+            // userDatabase,
+            // hashGenerator,
+            // tokenGenerator,
+            // idGenerator
         );
   
         await userBusiness.getUserById("invalid-id");
@@ -39,7 +42,7 @@ describe("Testing UserBusiness.getUserById", () => {
     let idGenerator = {};
   
     test("Should return 'User not found' when user does not exist", async () => {
-        
+
       const getUserById = jest.fn(
         (id: string) =>
           new User(
@@ -54,10 +57,10 @@ describe("Testing UserBusiness.getUserById", () => {
       userDatabase = { getUserById };
   
       const userBusiness = new UserBusiness(
-        userDatabase as any,
-        hashGenerator as any,
-        tokenGenerator as any,
-        idGenerator as any
+        // userDatabase as any,
+        // hashGenerator as any,
+        // tokenGenerator as any,
+        // idGenerator as any
       );
   
       const user = await userBusiness.getUserById("id");
