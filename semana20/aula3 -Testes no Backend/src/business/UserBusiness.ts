@@ -1,11 +1,18 @@
 import { CustomError } from "../errors/CustomError";
 import { User, stringToUserRole, UserRole } from "../model/User";
-import userDatabase from "../data/UserDatabase";
-import hashGenerator from "../services/hashGenerator";
-import idGenerator from "../services/idGenerator";
-import tokenGenerator from "../services/tokenGenerator";
+import userDatabase, { UserDatabase } from "../data/UserDatabase";
+import hashGenerator, { HashGenerator } from "../services/hashGenerator";
+import idGenerator, { IdGenerator } from "../services/idGenerator";
+import tokenGenerator, { TokenGenerator } from "../services/tokenGenerator";
 
 export class UserBusiness {
+
+   constructor(
+      private userDatabase: UserDatabase,
+      private hashGenerator: HashGenerator,
+      private tokenGenerator:TokenGenerator,
+      private idGenerator:IdGenerator
+   ){}
 
    public async signup(
       name: string,
@@ -157,4 +164,7 @@ export class UserBusiness {
    }
 }
 
-export default new UserBusiness()
+export default new UserBusiness(userDatabase,
+   hashGenerator,
+   tokenGenerator,
+   idGenerator)

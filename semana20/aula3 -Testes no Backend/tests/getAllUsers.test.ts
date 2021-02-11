@@ -14,10 +14,10 @@ describe("Testing UserBusiness.allUsers", () => {
       expect.assertions(2);
       try {
         const userBusiness = new UserBusiness(
-        //   userDatabase as any,
-        //   hashGenerator as any,
-        //   tokenGenerator as any,
-        //   idGenerator as any
+          userDatabase as any,
+          hashGenerator as any,
+          tokenGenerator as any,
+          idGenerator as any
         );
   
         await userBusiness.getAllUsers(UserRole.NORMAL);

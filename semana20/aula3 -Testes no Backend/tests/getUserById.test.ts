@@ -19,10 +19,10 @@ describe("Testing UserBusiness.getUserById", () => {
       try {
          
         const userBusiness = new UserBusiness(   
-            // userDatabase,
-            // hashGenerator,
-            // tokenGenerator,
-            // idGenerator
+            userDatabase,
+            hashGenerator,
+            tokenGenerator,
+            idGenerator
         );
   
         await userBusiness.getUserById("invalid-id");
@@ -57,10 +57,10 @@ describe("Testing UserBusiness.getUserById", () => {
       userDatabase = { getUserById };
   
       const userBusiness = new UserBusiness(
-        // userDatabase as any,
-        // hashGenerator as any,
-        // tokenGenerator as any,
-        // idGenerator as any
+        userDatabase as any,
+        hashGenerator as any,
+        tokenGenerator as any,
+        idGenerator as any
       );
   
       const user = await userBusiness.getUserById("id");
